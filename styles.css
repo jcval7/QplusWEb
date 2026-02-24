@@ -1,0 +1,834 @@
+/* ==========================================================================
+   ESTILOS GLOBALES QPLUS
+   ========================================================================== */
+body {
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 22px;
+    margin: 0;
+    line-height: 1.5;
+    padding-top: 150px; /* Debe ser igual a la altura del navbar */
+    background-color: whitesmoke;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Cambiado de relative a fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background-color: #ffffff;
+    padding: 0 5%;
+    z-index: 10000; /* Asegura que esté por encima de todo */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra para que se note al bajar */
+    box-sizing: border-box;
+}
+
+/* --- Logo --- */
+.logo img {
+  height: 80px; /* Controla el tamaño del logo */
+  width: auto;
+  display: block;
+  margin-bottom: 15px; /* Espacio entre el logo y la franja de abajo */
+}
+
+/* --- Navegación --- */
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px; /* Espacio entre botones */
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.nav-list a:hover {
+  color: #007bff;
+}
+
+/* --- Dropdown (Productos) --- */
+.dropdown {
+  position: relative;
+}
+
+/* Insertar flecha de FontAwesome automáticamente */
+.dropbtn::after {
+  content: "\f107"; /* Código de flecha hacia abajo en FontAwesome */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-left: 8px;
+  font-size: 0.8rem;
+  transition: transform 0.3s;
+}
+
+.dropdown:hover .dropbtn::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  z-index: 10000;
+  border-radius: 4px;
+}
+
+.dropdown-content li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-content li:last-child {
+  border-bottom: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* --- Menú Móvil (Hamburguesa) --- */
+.menu-toggle {
+  display: none; /* Se oculta en PC */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #4A6EA6;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-list {
+    display: none; /* Se oculta para el JS */
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+}
+/* Estilos de la Franja Fina */
+.franja-fina {
+    display: flex !important; /* Fuerza el mostrado */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px; /* La subí un poco a 6px para que sea más fácil de detectar ahora */
+    z-index: 999; /* Esto la pone por encima de TODO */
+    overflow: hidden;
+}
+
+.f-color {
+    flex: 1;
+    height: 100%;
+}
+
+/* Colores de la franja */
+.c1 { background-color: #ff8800; } /* Naranja */
+
+/* ============================================================
+------------------ SECCION CARRUSEL ---------------------------
+=============================================================== */
+/* --- Contenedor Principal Full Width --- */
+.main-fluid {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 450px; /* Mantener tu altura preferida */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    /* CLAVE: contain para ver la imagen completa sin cortes */
+    object-fit: contain; 
+    object-position: center;
+    display: block;
+}
+
+/* --- Navegación Limpia --- */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px;
+    color: rgba(0, 74, 153, 0.3); /* Azul muy suave para no distraer */
+    font-size: 40px;
+    text-decoration: none;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.next { right: 20px; }
+.prev { left: 20px; }
+
+.prev:hover, .next:hover {
+    color: #004a99;
+}
+
+/* --- Puntos de control --- */
+.dots-container {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    z-index: 15;
+}
+
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background-color: #004a99;
+    transform: scale(1.2);
+}
+
+/* --- ADAPTACIÓN PARA MÓVIL --- */
+@media (max-width: 768px) {
+    .carousel-container {
+        /* Bajamos la altura en móvil para que la imagen no se vea minúscula */
+        height: 250px; 
+    }
+
+    .slide img {
+        /* En móvil, a veces 'cover' funciona mejor para llenar la pantalla, 
+           pero mantenemos 'contain' para que NO se corte nada como pediste */
+        object-fit: contain;
+    }
+
+    /* Flechas más pequeñas para que no estorben el contenido */
+    .prev, .next {
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    .next { right: 5px; }
+    .prev { left: 5px; }
+
+    /* Puntos de control un poco más separados del borde */
+    .dots-container {
+        bottom: 10px;
+    }
+    
+    .dot {
+        height: 8px;
+        width: 8px;
+    }
+}
+
+/* Ajuste para pantallas muy pequeñas (iPhone SE, etc.) */
+@media (max-width: 480px) {
+    .carousel-container {
+        height: 180px;
+    }
+    
+    .prev, .next {
+        display: none; /* Opcional: ocultar flechas en pantallas muy pequeñas para limpieza total */
+    }
+}
+
+/* ============================================================
+---------------- SECCION INICIO -------------------------------
+=============================================================== */
+.wrapper-inicio {
+    max-width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+}
+
+/* Ajustar la sección 'inicio' para que no se superponga al carrusel */
+.container#inicio {
+    padding-top: 20px; /* Añadir espacio superior en la sección de inicio */
+}
+
+/* Estilos para el inicio (video y texto a la derecha) */
+#inicio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#inicio .video-container {
+    flex: 1;
+    max-width: 50%;
+}
+
+#inicio .text-container {
+    flex: 1;
+    max-width: 50%;
+    padding-left: 20px;
+}
+
+/* Viñetas de la lista de inicio */
+
+.lista-limpia {
+  list-style: none; /* Quitamos el punto original */
+  padding-left: 0;
+}
+
+.lista-limpia li {
+  position: relative;
+  padding-left: 30px; /* Espacio para el icono */
+  margin-bottom: 15px;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Creamos el check personalizado lista de inicio */
+.lista-limpia li::before {
+  content: '✓'; /* Puedes usar un check o una flecha '→' */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #e67626; /* Color de los check */
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* ============================================================
+------------------ SECCION SUITES -----------------------------
+=============================================================== */
+/* --- CONTENEDOR DE CONTENIDO SUITES --- */
+.wrapper-principal {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #004a99;
+    margin-bottom: 10px;
+}
+
+.separator-line {
+    border: 0;
+    height: 2px;
+    background: #ffcc00;
+    width: 100px;
+    margin: 0 auto 40px auto;
+}
+
+/* --- TARJETAS DE SUITES (CARDS) --- */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #4A6EA6;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid #ff8800;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #ffcc00;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card img {
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: white;
+}
+
+.card p {
+    color: white;
+    font-size: 1.3rem;
+}
+
+/* ============================================================
+------------------ SECCION POR QUÉ QPLUS? ---------------------
+=============================================================== */
+/* --- Sección Características --- */
+.bg-light {
+    padding: 60px 0;
+}
+
+.grid-layout-caracteristicas {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos */
+    gap: 50px;
+    align-items: center; /* Centra verticalmente el texto con la imagen */
+    margin-top: 30px;
+}
+
+/* Estilo de cada ítem de característica */
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.feature-item i {
+    color: #4A6EA6; /* Azul Corporativo */
+    font-size: 24px;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.feature-item p {
+    font-size: 1.1rem;
+    color: black;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Contenedor de Imagen */
+.img-content-caracteristicas {
+    text-align: center;
+}
+
+.img-fluida {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    /* Sombra suave para que resalte del fondo blanco */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 992px) {
+    .grid-layout-caracteristicas {
+        grid-template-columns: 1fr; /* Una sola columna en celulares */
+        text-align: center;
+    }
+    
+    .feature-item {
+        justify-content: center;
+    }
+    
+    .img-content-caracteristicas {
+        order: -1; /* La imagen aparece arriba en móviles */
+        margin-bottom: 30px;
+    }
+}
+
+/* ============================================================
+------------------ SECCION INSTALL ---------------------
+=============================================================== */
+/* --- Contenedor de Instalación --- */
+.grid-layout-instalacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.card-instalacion {
+    position: relative;
+    height: 350px; /* Altura fija para el efecto */
+    background: #ffffff;
+    border: 3px solid #ff8800;
+    border-radius: 20px;
+    overflow: hidden; /* Corta el texto que está "afuera" */
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+/* --- Capa Superior (Logo y Título) --- */
+.card-front-ins {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: all 0.4s ease;
+    padding: 20px;
+}
+
+.card-front-ins img {
+    height: 150px;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease;
+    
+}
+
+.card-front-ins h3 {
+    color: #004a99;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+/* --- Capa Inferior (Texto Oculto) --- */
+.card-back-ins {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #004a99;
+    color: white;
+    
+    /* AJUSTE: Aumentamos el padding lateral a 40px o 50px */
+    padding: 30px 45px; 
+    
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box; /* Asegura que el padding no agrande la tarjeta */
+}
+
+.card-back-ins p {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6; /* Un poco más de espacio entre líneas ayuda a la lectura */
+    margin-bottom: 15px;
+    text-align: left; /* Alineado a la izquierda se lee más natural que justificado en espacios pequeños */
+}
+
+/* --- EFECTO HOVER (Expansión) --- */
+.card-instalacion:hover .card-back-ins {
+    transform: translateY(0); /* Sube el texto */
+}
+
+.card-instalacion:hover .card-front-ins {
+    opacity: 0;
+    transform: scale(0.8); /* El logo se desvanece sutilmente */
+}
+
+.card-instalacion:hover {
+    border-color: #ffcc00; /* Cambio de borde a amarillo */
+    box-shadow: 0 15px 30px rgba(0, 74, 153, 0.2);
+}
+
+/* Estilo para la info destacada dentro de la card azul */
+.card-back-ins .info-destacada {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid #ffcc00;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Responsivo */
+@media (max-width: 850px) {
+    .grid-layout-instalacion {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+}
+
+/* ============================================================
+------------------ SECCION FOOTER COMPLETO --------------------
+=============================================================== */
+/* --- FOOTER --- */
+.pie-pagina {
+    width: 100%;
+    background-color: #346ba6;
+}
+
+.grupo-1 {
+    width: 100%;
+    max-width: 2000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 100px;
+    padding: 45px, 0px;
+    text-align: center;
+}
+
+.box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+figure img {
+    width: 250px;
+}
+
+.box h3 {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.box p {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.box p a {
+    color: white;
+}
+.box p a:hover {
+    color: #e67626;
+}
+
+.red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: white;
+    margin-right: 10px;
+    background-color: #003366;
+    text-align: center;
+    justify-content: center;
+    transition: all 300ms ease;
+    border-radius: 10px;
+}
+
+.red-social a:hover {
+    color: #e67626;
+}
+
+.grupo-2 {
+    background-color: #e67626;
+    padding: 15px, 10px;
+    text-align: center;
+    color: white;
+}
+
+.grupo-2  small {
+    font-size: 15px;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        padding: 15px;
+    }
+    body { padding-top: 220px; }
+    .hero-text h1 { font-size: 45px; }
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS - SUITE SISTEMAS DE GESTIÓN (SG)
+   ========================================================================== */
+
+/* 1. Banner Superior (Hero) */
+.hero-bg-modulo {
+    width: 100%;
+    height: 320px;
+    background-image: url('media/Banners\ Suites\ Qplus\ -\ Info/bannersuite_SG.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-overlay {
+    background: rgba(1, 23, 46, 0.6); /* Azul Qplus con transparencia */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.hero-text h1 {
+    color: #DBB557; /* Amarillo resaltado */
+    font-size: 42px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero-text p {
+    color: white;
+    font-size: 20px;
+    max-width: 700px;
+    line-height: 1.4;
+}
+
+/* 2. Sección de Introducción (Beneficios + Video) */
+.grid-layout-caracteristicas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.text-content-caracteristicas h2 {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.feature-item i {
+    color: #4A6EA6;
+    font-size: 22px;
+    margin-right: 15px;
+    margin-top: 4px;
+}
+
+/* 3. Contenedor de Video Tutorial */
+.video-container-suite {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    border: 4px solid #fff;
+    background: #000;
+}
+
+.video-container-suite video {
+    width: 100%;
+    display: block;
+}
+
+/* 4. Tabla de Módulos (Diseño Limpio) */
+.tabla-contenedor {
+    margin-top: 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.row-with-border {
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s ease;
+}
+
+.row-with-border:hover {
+    background-color: #f9fbff; /* Color de realce suave */
+}
+
+/* Columna de Logo */
+.image-label-container {
+    width: 220px;
+    padding: 25px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #f4f7fa; /* Gris azulado muy tenue */
+}
+
+.image-label-container img {
+    max-width: 90px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.image-label {
+    font-weight: bold;
+    color: #004a99;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Columna de Texto Descriptivo */
+.row-with-border td:last-child {
+    padding: 25px 35px;
+    vertical-align: top;
+}
+
+.row-with-border td p {
+    margin: 6px 0;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #444;
+}
+
+/* 5. Ajustes para Celulares */
+@media (max-width: 850px) {
+    .grid-layout-caracteristicas {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-bg-modulo {
+        height: 200px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .image-label-container {
+        width: 120px;
+        padding: 15px;
+    }
+
+    .image-label-container img {
+        max-width: 60px;
+    }
+}

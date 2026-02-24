@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qplus - Valoración del Desempeño</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <a href="index.html"
+          ><img src="media/logo_Qplus2.jpg" alt="Logo QPlus"
+        /></a>
+      </div>
+      <nav class="navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Suites</a>
+            <ul class="dropdown-content">
+              <li>
+                <a href="M_SistemasGestion.html">Sistemas de Gestión</a>
+              </li>
+              <li>
+                <a href="M_ValoracionDesempeño.html"
+                  >Valoración del Desempeño</a
+                >
+              </li>
+              <li>
+                <a href="M_TalentoHumano.html">Talento Humano</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#instalacion" onclick="showSection('instalacion')"
+              >Instalación</a
+            >
+          </li>
+          <li>
+            <a href="#nosotros" onclick="showSection('nosotros')">Nosotros</a>
+          </li>
+          <li>
+            <a href="#casos-exito" onclick="showSection('casos de exito')"
+              >Clientes</a
+            >
+          </li>
+          <li>
+            <a href="#contacto" onclick="showSection('contacto')"
+              >Contáctenos</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="franja-fina">
+        <div class="f-color c1"></div>
+        <!-- <div class="f-color c2"></div>
+        <div class="f-color c3"></div>
+        <div class="f-color c4"></div> -->
+      </div>
+    </header>
+
+    <section
+      class="hero-bg-modulo"
+      style="
+        background-image: url(&quot;media/Banners\ Suites\ Qplus\ -\ Info/bannersuite_VD.png&quot;);
+      "
+    >
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <h1>Valoración del Desempeño</h1>
+          <p>
+            Mida el potencial y la productividad de su equipo de manera
+            objetiva.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <main class="wrapper-principal">
+      <div class="grid-layout-caracteristicas">
+        <div class="text-content-caracteristicas">
+          <h2>Medición de Resultados</h2>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <p>Evaluaciones de 90°, 180° y 360° totalmente parametrizables.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <p>Análisis de brechas de competencias y planes de desarrollo.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <p>Reportes gráficos en tiempo real para la toma de decisiones.</p>
+          </div>
+        </div>
+        <div class="video-container-suite">
+          <video controls>
+            <source
+              src="media/Qplus - Valoracion Desempeño.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+
+      <div class="tabla-contenedor">
+        <table>
+          <tr class="row-with-border">
+            <td class="image-label-container">
+              <img
+                src="media/valoracion_desempeño/competencias.png"
+                alt="Competencias"
+              />
+              <p class="image-label">Competencias</p>
+            </td>
+            <td>
+              <p>• Definición de diccionarios de competencias por cargo.</p>
+              <p>• Evaluación de comportamientos y niveles de dominio.</p>
+              <p>• Generación de planes de cierre de brechas.</p>
+            </td>
+          </tr>
+          <tr class="row-with-border">
+            <td class="image-label-container">
+              <img
+                src="media/valoracion_desempeño/objetivos.png"
+                alt="Objetivos"
+              />
+              <p class="image-label">Objetivos</p>
+            </td>
+            <td>
+              <p>• Acuerdos de desempeño y metas SMART.</p>
+              <p>• Seguimiento periódico a los indicadores de logro.</p>
+              <p>
+                • Calificación cuantitativa del cumplimiento individual y
+                grupal.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

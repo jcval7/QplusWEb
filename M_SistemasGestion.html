@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qplus - Sistemas de Gestión</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <a href="index.html"
+          ><img src="media/logo_Qplus2.jpg" alt="Logo QPlus"
+        /></a>
+      </div>
+      <nav class="navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Suites</a>
+            <ul class="dropdown-content">
+              <li>
+                <a href="M_SistemasGestion.html">Sistemas de Gestión</a>
+              </li>
+              <li>
+                <a href="M_ValoracionDesempeño.html"
+                  >Valoración del Desempeño</a
+                >
+              </li>
+              <li>
+                <a href="M_TalentoHumano.html">Talento Humano</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#instalacion" onclick="showSection('instalacion')"
+              >Instalación</a
+            >
+          </li>
+          <li>
+            <a href="#nosotros" onclick="showSection('nosotros')">Nosotros</a>
+          </li>
+          <li>
+            <a href="#casos-exito" onclick="showSection('casos de exito')"
+              >Clientes</a
+            >
+          </li>
+          <li>
+            <a href="#contacto" onclick="showSection('contacto')"
+              >Contáctenos</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="franja-fina">
+        <div class="f-color c1"></div>
+        <!-- <div class="f-color c2"></div>
+        <div class="f-color c3"></div>
+        <div class="f-color c4"></div> -->
+      </div>
+    </header>
+
+    <section class="hero-bg-modulo">
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <h1>Sistemas de Gestión</h1>
+          <p>
+            Administración, gestión y mantenimiento integral de los sistemas de
+            su empresa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <main class="wrapper-principal">
+      <div class="grid-layout-caracteristicas">
+        <div class="text-content-caracteristicas">
+          <h2>Beneficios Principales</h2>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <p>
+              Evidencia trazabilidad, análisis y mejoras de forma rápida y
+              sencilla.
+            </p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <p>
+              Brinda confiabilidad y veracidad de la información ante auditores
+              y clientes.
+            </p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <p>
+              Centraliza la información, reduciendo tiempos, costos y
+              complejidad de mantenimiento.
+            </p>
+          </div>
+        </div>
+        <div class="video-container-suite">
+          <video controls poster="media/poster_video_sg.jpg">
+            <source
+              src="media/Qplus - Sistemas de Gestión.mp4"
+              type="video/mp4"
+            />
+            Tu navegador no soporta el formato de video.
+          </video>
+        </div>
+      </div>
+
+      <div class="seccion-contenido">
+        <h2>Módulos Incluidos</h2>
+        <div class="separator-line"></div>
+
+        <div class="tabla-contenedor">
+          <table>
+            <tr class="row-with-border">
+              <td class="image-label-container">
+                <img src="media/sistemas_gestion/acciones.png" alt="Acciones" />
+                <p class="image-label">Acciones</p>
+              </td>
+              <td>
+                <p>
+                  • Creación, análisis y seguimiento a acciones correctivas,
+                  preventivas y de mejora.
+                </p>
+                <p>• Análisis de causas con metodología 5M y los porqués.</p>
+                <p>
+                  • Planeación de actividades con responsables e indicadores de
+                  eficacia.
+                </p>
+                <p>
+                  • Soporte para adjuntar evidencias en múltiples formatos (PDF,
+                  Excel, JPG).
+                </p>
+              </td>
+            </tr>
+            <tr class="row-with-border">
+              <td class="image-label-container">
+                <img src="media/sistemas_gestion/actas.png" alt="Actas" />
+                <p class="image-label">Actas</p>
+              </td>
+              <td>
+                <p>• Registro formal de reuniones por proceso.</p>
+                <p>
+                  • Gestión de tareas con responsables y fechas programadas.
+                </p>
+                <p>
+                  • Adjunto de listas de asistencia y presentaciones de apoyo.
+                </p>
+              </td>
+            </tr>
+            <tr class="row-with-border">
+              <td class="image-label-container">
+                <img
+                  src="media/sistemas_gestion/auditorias_internas.png"
+                  alt="Auditorías"
+                />
+                <p class="image-label">Auditorías Internas</p>
+              </td>
+              <td>
+                <p>
+                  • Programación de auditorías por proceso y elaboración de
+                  listas de chequeo.
+                </p>
+                <p>
+                  • Clasificación de hallazgos y creación automática de acciones
+                  correctivas.
+                </p>
+                <p>
+                  • Seguimiento y cierre de hallazgos garantizando
+                  confidencialidad de la información.
+                </p>
+              </td>
+            </tr>
+            <tr class="row-with-border">
+              <td class="image-label-container">
+                <img
+                  src="media/sistemas_gestion/documentos.png"
+                  alt="Documentos"
+                />
+                <p class="image-label">Documentos</p>
+              </td>
+              <td>
+                <p>
+                  • Gestión completa del ciclo documental: elaboración, revisión
+                  y aprobación.
+                </p>
+                <p>
+                  • Control de versiones vigentes/obsoletas y codificación
+                  automática.
+                </p>
+                <p>
+                  • Administración de registros externos y control de
+                  distribución.
+                </p>
+              </td>
+            </tr>
+            <tr class="row-with-border">
+              <td class="image-label-container">
+                <img src="media/sistemas_gestion/tareas.png" alt="Tareas" />
+                <p class="image-label">Administrador de Tareas</p>
+              </td>
+              <td>
+                <p>
+                  • Seguimiento centralizado a tareas creadas en todos los
+                  módulos de la suite.
+                </p>
+                <p>
+                  • Registro por funcionario y consulta de historial de
+                  seguimientos.
+                </p>
+                <p>
+                  • Carga de evidencias para el cumplimiento de actividades.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer"></footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

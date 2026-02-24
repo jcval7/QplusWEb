@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qplus - Más que Calidad</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="media/logoqplus.icon.ico" />
+
+    <script defer src="scripts.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="media/logo_Qplus2.jpg" alt="Logo QPlus" />
+        </a>
+      </div>
+
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <nav class="navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Suites</a>
+            <ul class="dropdown-content">
+              <li>
+                <a href="M_SistemasGestion.html">Sistemas de Gestión</a>
+              </li>
+              <li>
+                <a href="M_ValoracionDesempeño.html"
+                  >Valoración del Desempeño</a
+                >
+              </li>
+              <li>
+                <a href="M_TalentoHumano.html">Talento Humano</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#instalacion" onclick="showSection('instalacion')"
+              >Instalación</a
+            >
+          </li>
+          <li>
+            <a href="#nosotros" onclick="showSection('nosotros')">Nosotros</a>
+          </li>
+          <li>
+            <a href="#casos-exito" onclick="showSection('casos de exito')"
+              >Clientes</a
+            >
+          </li>
+          <li>
+            <a href="#contacto" onclick="showSection('contacto')"
+              >Contáctenos</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="franja-fina">
+        <div class="f-color c1"></div>
+        <!-- <div class="f-color c2"></div>
+        <div class="f-color c3"></div>
+        <div class="f-color c4"></div> -->
+      </div>
+    </header>
+    <!-- CARROUSEL1 SECTION -->
+    <main class="main-fluid">
+      <div class="carousel-container">
+        <div class="slide fade">
+          <img src="media/carrusel-inicio/2.png" alt="Banner Qplus 1" />
+        </div>
+        <div class="slide fade">
+          <img src="media/carrusel-inicio/1.png" alt="Banner Qplus 2" />
+        </div>
+        <div class="slide fade">
+          <img src="media/carrusel-inicio/3.png" alt="Banner Qplus 3" />
+        </div>
+        <div class="slide fade">
+          <img src="media/carrusel-inicio/4.png" alt="Banner Qplus 4" />
+        </div>
+        <div class="slide fade">
+          <img src="media/carrusel-inicio/5.png" alt="Banner Qplus 5" />
+        </div>
+
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
+
+        <div class="dots-container">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+    </main>
+    <!-- FIRST PAGE SECTION -->
+    <div class="wrapper-inicio">
+      <div class="container-inicio" id="inicio">
+        <div style="flex: 1; max-width: 50%; padding: 10px">
+          <video width="100%" controls>
+            <source src="media/Qplus 2024- Corto.mp4" type="video/mp4" />
+            Tu navegador no soporta el formato de video.
+          </video>
+        </div>
+        <div class="text-container">
+          <h2>¡Sistema de Gestión basado en mejora continua y eficiencia!</h2>
+          <p>
+            QPLUS, sistema orientado a dar apoyo informático a la gestión por
+            procesos, integrando módulos para:
+          </p>
+          <ul class="lista-limpia">
+            <li>
+              Administración, gestión y mantenimiento de los Sistemas de
+              Gestión.
+            </li>
+            <li>
+              Valoración del desempeño basado en análisis de competencias e
+              indicadores.
+            </li>
+            <li>Información de los funcionarios.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- QPLUS' SUITES SECTION -->
+    <main class="wrapper-principal">
+      <section id="modulos" class="seccion-principal">
+        <h2>Nuestras Suites</h2>
+        <div class="separator-line"></div>
+        <div class="card-container">
+          <div class="card" onclick="location.href = 'M_SistemasGestion.html'">
+            <img src="media/SG_Qplus.png" alt="Sistemas de Gestión" />
+            <h3>Sistemas de Gestión</h3>
+            <p>
+              Optimice sus procesos y cumpla con estándares internacionales.
+            </p>
+          </div>
+          <div
+            class="card"
+            onclick="location.href = 'M_ValoracionDesempeño.html'"
+          >
+            <img src="media/VD_Qplus.png" alt="Valoración del Desempeño" />
+            <h3>Valoración del Desempeño</h3>
+            <p>
+              Mida y potencie las competencias y el rendimiento de su equipo de
+              trabajo.
+            </p>
+          </div>
+          <div class="card" onclick="location.href = 'M_TalentoHumano.html'">
+            <img src="media/TH_Qplus.png" alt="Talento Humano" />
+            <h3>Talento Humano</h3>
+            <p>
+              Centralice la información laboral y analice brechas según el
+              perfil del cargo.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- QPLUS' CHARACTERS SECTION -->
+      <section class="seccion-principal bg-light" id="caracteristicas">
+        <div class="wrapper-principal">
+          <h2>Administramos su sistema ahorrándole tiempo y recursos</h2>
+          <div class="separator-line"></div>
+
+          <div class="grid-layout-caracteristicas">
+            <div class="text-content-caracteristicas">
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <p>
+                  Seguridad al crear, modificar, eliminar y visualizar
+                  información.
+                </p>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <p>Información en línea para la oportuna toma de decisiones.</p>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <p>
+                  Flexibilidad en la conexión de bases de datos y aplicaciones
+                  externas.
+                </p>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <p>Arquitectura 100% web, segura, estable y robusta.</p>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <p>Ambiente gráfico amigable en toda su interfaz.</p>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <p>Aplicación modular diseñada para una fácil expansión.</p>
+              </div>
+            </div>
+
+            <div class="img-content-caracteristicas">
+              <img
+                src="media/Caract-1.png"
+                alt="Características Qplus"
+                class="img-fluida"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- INSTALL SECTION -->
+      <section class="seccion-principal" id="instalacion">
+        <div class="wrapper-principal">
+          <h2>Tipos de Instalación</h2>
+          <div class="separator-line"></div>
+
+          <div class="grid-layout-instalacion">
+            <div class="card-instalacion">
+              <div class="card-front-ins">
+                <img src="media/La_nube2.png" alt="Icono La Nube" />
+                <h3>LA NUBE</h3>
+              </div>
+              <div class="card-back-ins">
+                <p>
+                  Software alojado en la nube de <strong>QPLUS</strong>. Reduce
+                  el impacto financiero y brinda seguridad de la información
+                </p>
+                <div class="info-destacada">
+                  <p>
+                    <i class="fas fa-info-circle"></i> Servicio regido bajo
+                    condiciones QPLUS NUBE y políticas D&M Software Solutions
+                    S.A.S.
+                  </p>
+                </div>
+                <p>
+                  Administre sus usuarios sin costo adicional hasta el límite de
+                  su licencia.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-instalacion">
+              <div class="card-front-ins">
+                <img src="media/Multiempresa.png" alt="Icono Multiempresa" />
+                <h3>MULTIEMPRESA</h3>
+              </div>
+              <div class="card-back-ins">
+                <p>
+                  Automatiza sistemas de gestión de diferentes compañías de un
+                  mismo grupo.
+                </p>
+                <p>
+                  Independiza la información por empresa con una sola licencia
+                  vía internet o intranet.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- FOOTER SECTION -->
+    <br />
+    <br />
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure>
+            <a href="#">
+              <img src="media/QplusLogo.png" alt="Logo Qplus" />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <p>
+            <a
+              href="https://www.dymsites.co"
+              target="_blank"
+              class="footer-link"
+              >www.dymsites.co</a
+            >
+          </p>
+          <p>
+            <a
+              href="media/Condiciones del uso del software QPLUS NUBE como servicio.pdf"
+              target="_blank"
+              class="footer-link"
+              >Condiciones del uso del software <b>QPLUS NUBE</b> como
+              servicio</a
+            >
+          </p>
+        </div>
+        <div class="box">
+          <h3>SÍGUENOS</h3>
+          <div class="red-social">
+            <a
+              href="https://www.facebook.com/dymsoftware"
+              target="_blank"
+              title="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/d-m-software-solutions-s-a-s/posts/?feedView=all"
+              target="_blank"
+              title="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/qpluscolombia/"
+              target="_blank"
+              title="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://wa.me/3152990225"
+              target="_blank"
+              title="Contactar por WhatsApp"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="grupo-2">
+        <small
+          >&copy; 2025 <b>D&M Software Solutions SAS</b> - Todos los derechos
+          Reservados.</small
+        >
+      </div>
+    </footer>
+  </body>
+</html>
