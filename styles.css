@@ -511,7 +511,7 @@ h2 {
 .card-instalacion {
     position: relative;
     height: 350px; /* Altura fija para el efecto */
-    background: #ffffff;
+    background: #4A6EA6;
     border: 3px solid #ff8800;
     border-radius: 20px;
     overflow: hidden; /* Corta el texto que está "afuera" */
@@ -534,11 +534,12 @@ h2 {
     height: 150px;
     margin-bottom: 15px;
     transition: transform 0.4s ease;
+    filter: brightness(0) invert(1);
     
 }
 
 .card-front-ins h3 {
-    color: #004a99;
+    color: #ffffff;
     font-size: 1.8rem;
     font-weight: 800;
 }
@@ -549,7 +550,7 @@ h2 {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #004a99;
+    background-color: #ff8800;
     color: white;
     
     /* AJUSTE: Aumentamos el padding lateral a 40px o 50px */
@@ -583,8 +584,8 @@ h2 {
 }
 
 .card-instalacion:hover {
-    border-color: #ffcc00; /* Cambio de borde a amarillo */
-    box-shadow: 0 15px 30px rgba(0, 74, 153, 0.2);
+    border-color: #ffffff; /* Cambio de borde a amarillo */
+    box-shadow: 0 15px 30px rgba(238, 162, 112, 0.2);
 }
 
 /* Estilo para la info destacada dentro de la card azul */
@@ -864,8 +865,8 @@ h2 {
 }
 
 .btn-enviar {
-    background-color: rgb(78, 233, 78); /* Verde claro */
-    color: #4A6EA6;
+    background-color: rgb(31, 167, 31); /* Verde claro */
+    color: white;
     border: none;
     padding: 15px 35px;
     border-radius: 8px;
@@ -877,8 +878,8 @@ h2 {
 }
 
 .btn-enviar:hover {
-    background-color: #004a99;
-    color: #fff;
+    background-color: #4A6EA6;
+    color: white;
 }
 
 /* Información Lateral */
@@ -1029,11 +1030,49 @@ figure img {
 }
 
 /* ==========================================================================
-   ESTILOS ESPECÍFICOS - SUITE SISTEMAS DE GESTIÓN (SG)
+   ----------- ESTILOS COMPARTIDOS PARA SUITES (SG, TH, VD) -----------------
    ========================================================================== */
 
-/* 1. Banner Superior (Hero) */
-.hero-bg-modulo {
+.hero-overlay {
+    background: rgba(1, 23, 46, 0.6); 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 10%;
+}
+
+.hero-text h1 {
+    color: #DBB557; 
+    font-size: 60px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero-text p {
+    color: white;
+    font-size: 25px;
+    max-width: 600px;
+    line-height: 1.4;
+}
+
+.hero-logo-derecha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-logo-derecha img {
+    max-height: 180px;
+    width: auto;
+    filter: brightness(0) invert(1) drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+}
+
+/* ==========================================================================
+   DIFERENCIACIÓN DE BANNERS
+   ========================================================================== */
+.hero-bg-modulo-sg {
     width: 100%;
     height: 320px;
     background-image: url('media/Banners\ Suites\ Qplus\ -\ Info/bannersuite_SG.png');
@@ -1044,30 +1083,32 @@ figure img {
     position: relative;
 }
 
-.hero-overlay {
-    background: rgba(1, 23, 46, 0.6); /* Azul Qplus con transparencia */
+.hero-bg-modulo-th {
     width: 100%;
-    height: 100%;
+    height: 320px;
+    background-image: url('media/Banners\ Suites\ Qplus\ -\ Info/bannersuite_TH.png');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
-    padding: 0 10%;
+    position: relative;
 }
 
-.hero-text h1 {
-    color: #DBB557; /* Amarillo resaltado */
-    font-size: 42px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+.hero-bg-modulo-vd {
+    width: 100%;
+    height: 320px;
+    background-image: url('media/Banners\ Suites\ Qplus\ -\ Info/bannersuite_VD.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
-.hero-text p {
-    color: white;
-    font-size: 20px;
-    max-width: 700px;
-    line-height: 1.4;
-}
+/* ==========================================================================
+   ESTRUCTURA DE CONTENIDO (TABLES & GRID)
+   ========================================================================== */
 
-/* 2. Sección de Introducción (Beneficios + Video) */
 .grid-layout-caracteristicas {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1076,25 +1117,6 @@ figure img {
     margin: 50px 0;
 }
 
-.text-content-caracteristicas h2 {
-    text-align: left;
-    margin-bottom: 25px;
-}
-
-.feature-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
-
-.feature-item i {
-    color: #4A6EA6;
-    font-size: 22px;
-    margin-right: 15px;
-    margin-top: 4px;
-}
-
-/* 3. Contenedor de Video Tutorial */
 .video-container-suite {
     border-radius: 12px;
     overflow: hidden;
@@ -1108,7 +1130,6 @@ figure img {
     display: block;
 }
 
-/* 4. Tabla de Módulos (Diseño Limpio) */
 .tabla-contenedor {
     margin-top: 40px;
     border: 1px solid #e0e0e0;
@@ -1128,16 +1149,15 @@ table {
 }
 
 .row-with-border:hover {
-    background-color: #f9fbff; /* Color de realce suave */
+    background-color: #f9fbff;
 }
 
-/* Columna de Logo */
 .image-label-container {
     width: 220px;
     padding: 25px;
     text-align: center;
     vertical-align: middle;
-    background-color: #f4f7fa; /* Gris azulado muy tenue */
+    background-color: #f4f7fa;
 }
 
 .image-label-container img {
@@ -1153,7 +1173,6 @@ table {
     margin: 0;
 }
 
-/* Columna de Texto Descriptivo */
 .row-with-border td:last-child {
     padding: 25px 35px;
     vertical-align: top;
@@ -1166,26 +1185,15 @@ table {
     color: #444;
 }
 
-/* 5. Ajustes para Celulares */
+/* RESPONSIVE */
 @media (max-width: 850px) {
-    .grid-layout-caracteristicas {
-        grid-template-columns: 1fr;
+    .hero-overlay {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
     }
-    
-    .hero-bg-modulo {
-        height: 200px;
-    }
-
-    .hero-text h1 {
-        font-size: 28px;
-    }
-
-    .image-label-container {
-        width: 120px;
-        padding: 15px;
-    }
-
-    .image-label-container img {
-        max-width: 60px;
-    }
+    .hero-logo-derecha { margin-top: 20px; }
+    .hero-logo-derecha img { max-height: 100px; }
+    .grid-layout-caracteristicas { grid-template-columns: 1fr; }
+    .image-label-container { width: 120px; padding: 15px; }
 }
