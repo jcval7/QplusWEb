@@ -32,7 +32,7 @@
         <ul class="nav-list">
           <li><a href="index.html">Inicio</a></li>
           <li class="dropdown">
-            <a href="#" class="dropbtn">Suites</a>
+            <a href="#modulos" class="dropbtn">Suites</a>
             <ul class="dropdown-content">
               <li>
                 <a href="M_SistemasGestion.html">Sistemas de Gestión</a>
@@ -47,24 +47,10 @@
               </li>
             </ul>
           </li>
-          <li>
-            <a href="#instalacion" onclick="showSection('instalacion')"
-              >Instalación</a
-            >
-          </li>
-          <li>
-            <a href="#nosotros" onclick="showSection('nosotros')">Nosotros</a>
-          </li>
-          <li>
-            <a href="#casos-exito" onclick="showSection('casos de exito')"
-              >Clientes</a
-            >
-          </li>
-          <li>
-            <a href="#contacto" onclick="showSection('contacto')"
-              >Contáctenos</a
-            >
-          </li>
+          <li><a href="#instalacion">Instalación</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#nuestros-clientes">Clientes</a></li>
+          <li><a href="#contacto">Contáctenos</a></li>
         </ul>
       </nav>
 
@@ -101,6 +87,8 @@
           <span class="dot" onclick="currentSlide(1)"></span>
           <span class="dot" onclick="currentSlide(2)"></span>
           <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
         </div>
       </div>
     </main>
@@ -267,10 +255,262 @@
           </div>
         </div>
       </section>
+      <!-- ABOUT US SECTION -->
+      <section class="seccion-principal bg-white" id="nosotros">
+        <div class="wrapper-principal">
+          <h2>Nosotros</h2>
+          <div class="separator-line"></div>
+
+          <div class="grid-layout-nosotros">
+            <div class="img-content-nosotros">
+              <img
+                src="media/Equipo_1.png"
+                alt="Equipo D&M"
+                class="img-fluida"
+              />
+            </div>
+
+            <div class="text-content-nosotros">
+              <div class="logo-nosotros">
+                <img
+                  src="media/Logo_D&M.png"
+                  alt="D&M Software Solutions"
+                  class="logo-dym"
+                />
+              </div>
+              <div class="cuerpo-texto-nosotros">
+                <p>
+                  D&M Software Solutions es una empresa creada en el año 2004
+                  con sede en la ciudad de Cali y es una compañía experta en
+                  gestión integral, que ofrece soluciones informáticas con
+                  tecnología de punta, seguras, funcionales, rápidas, enfocadas
+                  a una excelente experiencia de usuario.
+                </p>
+                <p>
+                  D&M Software Solutions está conformado por profesionales de
+                  área de informática, calidad, SST, gestión humana, logística,
+                  con más de 20 años de experiencia, responsables del diseño,
+                  desarrollo, soporte de las aplicaciones, análisis conceptual
+                  de las herramientas, consultoría de calidad y gestión humana.
+                </p>
+                <p>
+                  Los profesionales que forman parte de este gran equipo, son
+                  los encargados del desarrollo de QPLUS, producto que hace
+                  parte de la familia D&M Software Solutions.
+                </p>
+                <p>
+                  El equipo de D&M pone todo su conocimiento y empeño para
+                  brindar productos y servicios que permitan a nuestros clientes
+                  apoyar su estrategia, optimizando el tiempo para ser más
+                  competitivos, al enfocar sus esfuerzos en mejoras a los
+                  procesos sin preocuparse por su operatividad.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CAROUSEL CLIENTS AND SUCCESS STORIES -->
+      <section class="seccion-principal" id="nuestros-clientes">
+        <div class="wrapper-principal">
+          <h2>Nuestros Clientes</h2>
+          <div class="separator-line"></div>
+
+          <div class="carousel-marquee">
+            <div class="marquee-content" id="marquee-content">
+              <div class="logo-item">
+                <img
+                  src="media/clientes/logo_Protecnica.png"
+                  alt="Protecnica"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="media/clientes/logoquimicalider.png"
+                  alt="Quimica Lider"
+                />
+              </div>
+              <div class="logo-item">
+                <img src="media/clientes/logonutresol.png" alt="Nutresol" />
+              </div>
+              <div class="logo-item">
+                <img src="media/clientes/logo_Comfandi3.jpg" alt="Comfandi" />
+              </div>
+              <div class="logo-item">
+                <img src="media/clientes/logo_SOS.png" alt="SOS" />
+              </div>
+              <div class="logo-item">
+                <img src="media/clientes/logo_gangana.png" alt="Seapto" />
+              </div>
+              <div class="logo-item">
+                <img src="media/clientes/logo_Suchance.png" alt="Suchance" />
+              </div>
+              <div class="logo-item">
+                <img src="media/clientes/logoreditos.png" alt="Grupo Reditos" />
+              </div>
+            </div>
+          </div>
+
+          <h2 class="espacio-arriba">Casos de Éxito</h2>
+          <div class="separator-line"></div>
+
+          <div class="grid-casos-exito" id="contenedor-testimonios">
+            <div class="card-exito">
+              <div class="header-blanco">
+                <img src="media/clientes/logoreditos.png" alt="Grupo Réditos" />
+                <h3>Diana Patricia Acevedo</h3>
+                <p class="cargo">Coordinadora Arquitectura Empresarial</p>
+                <p class="ubicacion">Grupo Réditos - Medellín</p>
+              </div>
+              <div class="cuerpo-azul">
+                <p>
+                  "<b>Qplus</b> es una herramienta integral que ha permitido
+                  gestionar el Sistema de gestión bajo todas las aristas..."
+                </p>
+              </div>
+            </div>
+
+            <div class="card-exito">
+              <div class="header-blanco">
+                <img src="media/clientes/logo_gangana.png" alt="Seapto" />
+                <h3>Leidy Catherine Soto</h3>
+                <p class="cargo">Jefe de Sistemas Integrados de Gestión</p>
+                <p class="ubicacion">Seapto - Ibagué</p>
+              </div>
+              <div class="cuerpo-azul">
+                <p>
+                  "<b>Qplus</b> es uno de los aliados estratégicos más
+                  importantes para la implementación de nuestros sistemas..."
+                </p>
+              </div>
+            </div>
+
+            <div class="card-exito">
+              <div class="header-blanco">
+                <img src="media/clientes/logo_Comfandi3.jpg" alt="Comfandi" />
+                <h3>Claudia Mylady Álvarez</h3>
+                <p class="cargo">Jefe Desarrollo y Cultura</p>
+                <p class="ubicacion">Comfandi - Cali</p>
+              </div>
+              <div class="cuerpo-azul">
+                <p>
+                  "Recomiendo a <b>D&M</b> por la calidad de su servicio y la
+                  oportunidad en los desarrollos solicitados..."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CONTACT US SECTION -->
+      <section class="seccion-principal bg-light" id="contacto">
+        <div class="wrapper-principal">
+          <h2>Contáctenos</h2>
+          <div class="separator-line"></div>
+          <p class="text-center subtitle">
+            Si tiene preguntas o desea más información, no dude en contactarnos.
+          </p>
+
+          <div class="grid-layout-contacto">
+            <div class="form-container">
+              <h3>Escríbenos</h3>
+              <form
+                id="contactForm"
+                action="https://formspree.io/f/mvggyelj"
+                method="POST"
+                class="formulario-qplus"
+              >
+                <div class="input-group">
+                  <label for="nombre">Nombre</label>
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Nombre Completo"
+                    required
+                  />
+                </div>
+
+                <div class="input-group">
+                  <label for="telefono">Teléfono</label>
+                  <input
+                    type="text"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="Teléfono"
+                    required
+                  />
+                </div>
+
+                <div class="input-group">
+                  <label for="email">E-mail</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Correo Electrónico"
+                    required
+                  />
+                </div>
+
+                <div class="input-group">
+                  <label for="mensaje">Mensaje</label>
+                  <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    rows="5"
+                    placeholder="Escribe tu mensaje aquí..."
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar</button>
+                <p
+                  id="responseMessage"
+                  style="
+                    display: none;
+                    margin-top: 15px;
+                    color: #004a99;
+                    font-weight: bold;
+                  "
+                ></p>
+              </form>
+            </div>
+
+            <div class="info-contacto">
+              <h3>Contactos</h3>
+              <p class="descripcion-contacto">
+                Conozca cómo <strong>Qplus</strong> puede optimizar los procesos
+                en su empresa. Nuestro sistema de gestión está diseñado para
+                adaptarse a sus necesidades, asegurando eficiencia y
+                productividad.
+              </p>
+
+              <div class="datos-lista">
+                <div class="dato-item">
+                  <i class="fas fa-envelope icon-mail"></i>
+                  <a href="mailto:info@dymsites.co">info@dymsites.co</a>
+                </div>
+                <div class="dato-item">
+                  <i class="fab fa-whatsapp icon-whatsapp"></i>
+                  <span>+57 315 2990225</span>
+                </div>
+                <div class="dato-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Cali - Colombia</span>
+                </div>
+              </div>
+
+              <div class="image-container-contacto">
+                <img src="media/contact us.png" alt="Imagen sobre Qplus" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- FOOTER SECTION -->
-    <br />
-    <br />
+
     <footer class="pie-pagina">
       <div class="grupo-1">
         <div class="box">

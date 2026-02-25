@@ -10,6 +10,12 @@ body {
     background-color: whitesmoke;
 }
 
+html {
+    scroll-behavior: smooth;
+    /* Ajusta este valor según la altura de tu navbar (150px aprox) */
+    scroll-padding-top: 160px; 
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -160,21 +166,23 @@ body {
 /* ============================================================
 ------------------ SECCION CARRUSEL ---------------------------
 =============================================================== */
-/* --- Contenedor Principal Full Width --- */
+/* --- Contenedor Principal --- */
 .main-fluid {
     width: 100%;
-    padding: 0;
-    margin: 0;
+    padding: 20px 0; /* Espacio arriba y abajo para que no pegue con el navbar */
 }
 
 .carousel-container {
     position: relative;
-    width: 100%;
-    height: 450px; /* Mantener tu altura preferida */
+    width: 100%; /* NO ocupa de lado a lado */
+    max-width: 1400px; /* Límite para pantallas muy grandes */
+    height: 400px; /* Altura más baja para que se vea más "estirado" */
+    margin: 0 auto; /* Centrado perfecto */
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 15px; /* Opcional: bordes redondeados para más elegancia */
 }
 
 .slide {
@@ -186,34 +194,34 @@ body {
 .slide img {
     width: 100%;
     height: 100%;
-    /* CLAVE: contain para ver la imagen completa sin cortes */
+    /* Mantenemos contain para que NO se distorsione ni se corte */
     object-fit: contain; 
     object-position: center;
     display: block;
 }
 
-/* --- Navegación Limpia --- */
+/* --- Navegación (Flechas fuera de la imagen o en los bordes) --- */
 .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: 15px;
-    color: rgba(0, 74, 153, 0.3); /* Azul muy suave para no distraer */
-    font-size: 40px;
+    padding: 10px;
+    color: rgba(0, 74, 153, 0.5);
+    font-size: 35px;
     text-decoration: none;
     transition: 0.3s;
     z-index: 10;
 }
 
-.next { right: 20px; }
-.prev { left: 20px; }
+.next { right: 10px; }
+.prev { left: 10px; }
 
 .prev:hover, .next:hover {
-    color: #004a99;
+    color: #ffcc00; /* Toque amarillo Qplus al pasar el mouse */
 }
 
-/* --- Puntos de control --- */
+/* --- Puntos de control (Dots) --- */
 .dots-container {
     position: absolute;
     bottom: 15px;
@@ -224,61 +232,24 @@ body {
 
 .dot {
     cursor: pointer;
-    height: 10px;
-    width: 10px;
+    height: 8px;
+    width: 8px;
     margin: 0 5px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     display: inline-block;
-    transition: 0.3s;
 }
 
 .dot.active {
     background-color: #004a99;
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
 
 /* --- ADAPTACIÓN PARA MÓVIL --- */
 @media (max-width: 768px) {
     .carousel-container {
-        /* Bajamos la altura en móvil para que la imagen no se vea minúscula */
-        height: 250px; 
-    }
-
-    .slide img {
-        /* En móvil, a veces 'cover' funciona mejor para llenar la pantalla, 
-           pero mantenemos 'contain' para que NO se corte nada como pediste */
-        object-fit: contain;
-    }
-
-    /* Flechas más pequeñas para que no estorben el contenido */
-    .prev, .next {
-        font-size: 25px;
-        padding: 10px;
-    }
-
-    .next { right: 5px; }
-    .prev { left: 5px; }
-
-    /* Puntos de control un poco más separados del borde */
-    .dots-container {
-        bottom: 10px;
-    }
-    
-    .dot {
-        height: 8px;
-        width: 8px;
-    }
-}
-
-/* Ajuste para pantallas muy pequeñas (iPhone SE, etc.) */
-@media (max-width: 480px) {
-    .carousel-container {
-        height: 180px;
-    }
-    
-    .prev, .next {
-        display: none; /* Opcional: ocultar flechas en pantallas muy pequeñas para limpieza total */
+        width: 95%; /* En móvil aprovechamos más el ancho */
+        height: 200px; /* Proporción para celulares */
     }
 }
 
@@ -407,6 +378,58 @@ h2 {
     font-size: 1.3rem;
 }
 
+/* --- ADAPTACIÓN PARA MÓVIL (TABLETS Y CELULARES) --- */
+
+@media (max-width: 992px) {
+    .card-container {
+        /* En tablets pasamos a 2 columnas si hay espacio, o se ajusta solo */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper-principal {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .card-container {
+        /* En celulares una sola tarjeta por fila */
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 25px; /* Reducimos el padding para ganar espacio */
+    }
+
+    .card p {
+        font-size: 1.1rem; /* Texto un poco más pequeño para legibilidad */
+    }
+
+    .card img {
+        height: 60px; /* Ajustamos el tamaño del icono/imagen */
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .card p {
+        font-size: 1rem;
+    }
+}
 /* ============================================================
 ------------------ SECCION POR QUÉ QPLUS? ---------------------
 =============================================================== */
@@ -576,6 +599,340 @@ h2 {
 @media (max-width: 850px) {
     .grid-layout-instalacion {
         grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+}
+
+/* ============================================================
+---------------------- SECCION NOSOTROS -----------------------
+=============================================================== */
+/* --- Sección Nosotros --- */
+.bg-white {
+    padding: 60px 0;
+}
+
+.grid-layout-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 50px;
+    align-items: center; /* Centra verticalmente el contenido */
+    margin-top: 20px;
+}
+
+/* Imagen de la izquierda */
+.img-content-nosotros {
+    text-align: center;
+}
+
+.img-content-nosotros img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    /* Mismo estilo de sombra que Características */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido de texto y logo D&M */
+.logo-nosotros {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.logo-dym {
+    height: 80px; /* Tamaño controlado para el logo de la empresa */
+    width: auto;
+    display: inline-block;
+}
+
+.cuerpo-texto-nosotros p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* --- ADAPTACIÓN PARA MÓVIL --- */
+@media (max-width: 992px) {
+    .grid-layout-nosotros {
+        grid-template-columns: 1fr; /* Una columna en tablets y móviles */
+        text-align: center;
+    }
+
+    .logo-nosotros {
+        text-align: center;
+    }
+
+    .img-content-nosotros {
+        order: -1; /* Imagen arriba en móviles */
+        margin-bottom: 30px;
+    }
+
+    .cuerpo-texto-nosotros p {
+        text-align: left; /* Mejor lectura en celular */
+        font-size: 1rem;
+    }
+}
+
+/* ============================================================
+-------------- SECCION CLIENTES Y CASOS DE EXITO --------------
+=============================================================== */
+/* --- Carrusel Clientes --- */
+.carousel-marquee {
+    overflow: hidden;
+    padding: 50px 0;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 25s linear infinite; /* 25s es una velocidad cómoda */
+}
+
+.logo-item {
+    display: inline-block;
+    /* CLAVE: Dimensiones fijas para el contenedor del logo */
+    width: 180px; 
+    height: 100px;
+    margin: 0 40px;
+    vertical-align: middle;
+}
+
+.logo-item img {
+    width: 100%;
+    height: 100%;
+    /* CLAVE: 'contain' evita que se estiren y los centra en el marco */
+    object-fit: contain; 
+    transition: all 0.4s ease;
+}
+
+.logo-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1); /* Efecto de acercamiento suave */
+}
+
+/* Animación fluida */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* Se desplaza la mitad exacta */
+}
+
+/* --- Casos de Éxito --- */
+.espacio-arriba { margin-top: 80px; }
+
+.grid-casos-exito {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card-exito {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,74,153,0.1);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-blanco {
+    padding: 30px;
+    text-align: center;
+    background: #fff;
+}
+
+.header-blanco img {
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.header-blanco h3 {
+    font-size: 1.2rem;
+    color: #004a99;
+    margin: 0;
+}
+
+.cargo {
+    color: #ff8800; /* Naranja para resaltar el cargo */
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.ubicacion {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.cuerpo-azul {
+    background: #004a99; /* Azul corporativo */
+    color: #fff;
+    padding: 30px;
+    flex-grow: 1;
+    position: relative;
+}
+
+.cuerpo-azul::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 4rem;
+    color: rgba(255,255,255,0.1);
+    font-family: serif;
+}
+
+.cuerpo-azul p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Adaptación Móvil */
+@media (max-width: 992px) {
+    .grid-casos-exito { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+-------------- SECCION CLIENTES Y CASOS DE EXITO --------------
+=============================================================== */
+/* --- Sección Contacto Estilo Qplus --- */
+.bg-light {
+    padding: 80px 0;
+}
+
+.subtitle {
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.grid-layout-contacto {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; /* Formulario ligeramente más ancho */
+    gap: 60px;
+    align-items: start;
+}
+
+/* Formulario */
+.form-container {
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 74, 153, 0.05);
+}
+
+.form-container h3, .info-contacto h3 {
+    color: #4A6EA6;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4A6EA6;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: #004a99;
+    outline: none;
+}
+
+.btn-enviar {
+    background-color: rgb(78, 233, 78); /* Verde claro */
+    color: #4A6EA6;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: #004a99;
+    color: #fff;
+}
+
+/* Información Lateral */
+.descripcion-contacto {
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.datos-lista {
+    margin-bottom: 40px;
+}
+
+.dato-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.dato-item i {
+    font-size: 20px;
+    margin-right: 15px;
+    color: #ff8800; /* Naranja para los iconos */
+    width: 25px;
+    text-align: center;
+}
+
+.dato-item a, .dato-item span {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.image-container-contacto img {
+    width: 80%;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+}
+
+/* --- ADAPTACIÓN MÓVIL --- */
+@media (max-width: 992px) {
+    .grid-layout-contacto {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .info-contacto {
+        order: -1; /* Info arriba en móviles */
+        text-align: center;
+    }
+
+    .dato-item {
+        justify-content: center;
     }
 }
 
