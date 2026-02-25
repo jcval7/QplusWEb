@@ -1187,13 +1187,39 @@ table {
 
 /* RESPONSIVE */
 @media (max-width: 850px) {
+    .hero-text h1 {
+        font-size: 35px; /* Reducimos título en móvil */
+    }
+
+    .hero-text p {
+        font-size: 18px;
+    }
+
     .hero-overlay {
-        flex-direction: column;
+        flex-direction: column; /* Apilar texto y logo */
         justify-content: center;
         text-align: center;
+        padding: 20px;
     }
-    .hero-logo-derecha { margin-top: 20px; }
-    .hero-logo-derecha img { max-height: 100px; }
-    .grid-layout-caracteristicas { grid-template-columns: 1fr; }
-    .image-label-container { width: 120px; padding: 15px; }
+
+    .hero-logo-derecha {
+        margin-top: 20px;
+    }
+
+    .hero-logo-derecha img {
+        max-height: 100px;
+    }
+
+    .grid-layout-caracteristicas {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+
+    .image-label-container {
+        width: 120px;
+        padding: 15px;
+    }
+
+    .image-label-container img {
+        max-width: 60px;
+    }
 }
