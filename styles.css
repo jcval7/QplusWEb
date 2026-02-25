@@ -318,9 +318,10 @@ html {
 =============================================================== */
 /* --- CONTENEDOR DE CONTENIDO SUITES --- */
 .wrapper-principal {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+    width: 100%;            /* Ocupa el 100% del ancho de la pantalla */
+    max-width: 1400px;     /* Permite que se ensanche hasta 1400px */
+    margin: 0 auto;        /* Mantiene el contenido centrado */
+    padding: 0 20px;       /* Espacio interno para que no toque los bordes en tablets */
 }
 
 h2 {
@@ -440,10 +441,10 @@ h2 {
 
 .grid-layout-caracteristicas {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos */
-    gap: 50px;
-    align-items: center; /* Centra verticalmente el texto con la imagen */
-    margin-top: 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;             /* Aumentamos un poco el espacio entre columnas */
+    align-items: center;
+    margin: 50px 0;
 }
 
 /* Estilo de cada ítem de característica */
@@ -803,7 +804,7 @@ h2 {
 }
 
 /* ============================================================
--------------- SECCION CLIENTES Y CASOS DE EXITO --------------
+------------------- SECCION CONTACTENOS -----------------------
 =============================================================== */
 /* --- Sección Contacto Estilo Qplus --- */
 .bg-light {
@@ -813,6 +814,7 @@ h2 {
 .subtitle {
     margin-bottom: 40px;
     color: #666;
+    text-align: center;
 }
 
 .grid-layout-contacto {
