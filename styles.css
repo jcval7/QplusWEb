@@ -6,7 +6,7 @@ body {
     font-size: 22px;
     margin: 0;
     line-height: 1.5;
-    padding-top: 150px; /* Debe ser igual a la altura del navbar */
+    padding-top: 100px; /* Debe ser igual a la altura del navbar */
     background-color: whitesmoke;
 }
 
@@ -20,26 +20,26 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed; /* Cambiado de relative a fixed */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 150px;
+    height: 100px; /* Reducido de 150px a 100px para PC */
     background-color: #ffffff;
     padding: 0 5%;
-    z-index: 10000; /* Asegura que esté por encima de todo */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra para que se note al bajar */
+    z-index: 10000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     box-sizing: border-box;
+    transition: height 0.3s ease; /* Para una transición suave */
 }
 
 /* --- Logo --- */
 .logo img {
-  height: 80px; /* Controla el tamaño del logo */
-  width: auto;
-  display: block;
-  margin-bottom: 15px; /* Espacio entre el logo y la franja de abajo */
+    height: 60px; /* Tamaño más equilibrado */
+    width: auto;
+    display: block;
+    margin-bottom: 5px; 
 }
-
 /* --- Navegación --- */
 .nav-list {
   display: flex;
@@ -106,43 +106,64 @@ html {
   display: block;
 }
 
-/* --- Menú Móvil (Hamburguesa) --- */
+/* --- Estilos para el Menú de Hamburguesa --- */
 .menu-toggle {
-  display: none; /* Se oculta en PC */
-  flex-direction: column;
-  cursor: pointer;
+    display: none; /* Oculto en computadoras */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10001;
 }
 
 .bar {
-  width: 25px;
-  height: 3px;
-  background-color: #4A6EA6;
-  margin: 4px 0;
-  transition: 0.4s;
+    width: 30px;
+    height: 4px;
+    background-color: #004a99; /* Azul Qplus */
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
 }
 
-/* Responsivo para celulares */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
+/* --- AJUSTES PARA CELULARES (Android y Apple) --- */
+@media (max-width: 850px) {
+    .menu-toggle {
+        display: flex; /* Muestra las tres rayitas */
+    }
 
-  .nav-list {
-    display: none; /* Se oculta para el JS */
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    flex-direction: column;
-    text-align: center;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  }
+    .nav-list {
+        display: none; /* Oculta la lista horizontal */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Ajustado a la altura del navbar móvil */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
 
-  .nav-list.active {
-    display: flex;
-  }
+    .nav-list.active {
+        display: flex; /* Se muestra al tocar las rayitas */
+    }
+
+    .nav-list li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* Animación de rayitas a X */
+    .menu-toggle.is-active .bar:nth-child(1) { transform: rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: rotate(-45deg); }
 }
+
 /* Estilos de la Franja Fina */
 .franja-fina {
     display: flex !important; /* Fuerza el mostrado */
@@ -256,61 +277,35 @@ html {
 /* ============================================================
 ---------------- SECCION INICIO -------------------------------
 =============================================================== */
-.wrapper-inicio {
-    max-width: 95vw;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 10px;
+.seccion-inicio-proceso {
+    padding: 60px 0;
 }
 
-/* Ajustar la sección 'inicio' para que no se superponga al carrusel */
-.container#inicio {
-    padding-top: 20px; /* Añadir espacio superior en la sección de inicio */
+.seccion-inicio-proceso h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #004a99;
+    margin-bottom: 10px;
+    padding: 0 20px;
 }
 
-/* Estilos para el inicio (video y texto a la derecha) */
-#inicio {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
+.separator-line {
+    width: 60px;
+    height: 4px;
+    background-color: #DBB557;
+    margin: 0 auto 40px auto;
 }
 
-#inicio .video-container {
-    flex: 1;
-    max-width: 50%;
-}
-
-#inicio .text-container {
-    flex: 1;
-    max-width: 50%;
-    padding-left: 20px;
-}
-
-/* Viñetas de la lista de inicio */
-
-.lista-limpia {
-  list-style: none; /* Quitamos el punto original */
-  padding-left: 0;
-}
-
-.lista-limpia li {
-  position: relative;
-  padding-left: 30px; /* Espacio para el icono */
-  margin-bottom: 15px;
-  line-height: 1.5;
-  color: #444;
-}
-
-/* Creamos el check personalizado lista de inicio */
-.lista-limpia li::before {
-  content: '✓'; /* Puedes usar un check o una flecha '→' */
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #ff8800; /* Color de los check */
-  font-weight: bold;
-  font-size: 1.3em;
+/* Ajuste específico para el orden en el inicio en móvil */
+@media (max-width: 850px) {
+    .seccion-inicio-proceso .grid-layout-caracteristicas {
+        display: flex;
+        flex-direction: column; /* Video arriba, texto abajo */
+    }
+    
+    .seccion-inicio-proceso h2 {
+        font-size: 24px;
+    }
 }
 
 /* ============================================================
@@ -942,20 +937,19 @@ h2 {
 /* ============================================================
 ------------------ SECCION FOOTER COMPLETO --------------------
 =============================================================== */
-/* --- FOOTER --- */
 .pie-pagina {
     width: 100%;
-    background-color: #346ba6;
+    background-color: #346ba6; /* El azul de tu código */
 }
 
 .grupo-1 {
     width: 100%;
-    max-width: 2000px;
+    max-width: 1400px; /* Ajustado para que no sea excesivamente ancho en pantallas 4k */
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 100px;
-    padding: 45px, 0px;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en PC */
+    grid-gap: 50px; /* Espaciado equilibrado */
+    padding: 45px 20px;
     text-align: center;
 }
 
@@ -969,6 +963,8 @@ h2 {
 
 figure img {
     width: 250px;
+    max-width: 100%; /* Evita que la imagen se salga en móviles */
+    height: auto;
 }
 
 .box h3 {
@@ -983,13 +979,17 @@ figure img {
     margin-bottom: 10px;
     font-size: 18px;
 }
+
 .box p a {
     color: white;
-}
-.box p a:hover {
-    color: #e67626;
+    text-decoration: none;
 }
 
+.box p a:hover {
+    color: #e67626; /* Color naranja de tu código */
+}
+
+/* Redes Sociales */
 .red-social a {
     display: inline-block;
     text-decoration: none;
@@ -997,40 +997,63 @@ figure img {
     height: 45px;
     line-height: 45px;
     color: white;
-    margin-right: 10px;
+    margin: 5px; /* Espacio para que no se peguen en móvil */
     background-color: #003366;
     text-align: center;
-    justify-content: center;
     transition: all 300ms ease;
     border-radius: 10px;
 }
 
 .red-social a:hover {
     color: #e67626;
+    background-color: white;
 }
 
+/* Franja Inferior Copyright */
 .grupo-2 {
     background-color: #e67626;
-    padding: 15px, 10px;
+    padding: 15px 10px;
     text-align: center;
     color: white;
 }
 
-.grupo-2  small {
+.grupo-2 small {
     font-size: 15px;
 }
 
-/* --- RESPONSIVO --- */
-@media (max-width: 768px) {
+/* ==========================================================================
+   AJUSTES PARA MÓVIL (Android & iOS)
+   ========================================================================== */
+@media (max-width: 850px) {
+    /* Navbar ajustado para que no tape el contenido */
     .navbar {
-        height: auto;
-        flex-direction: column;
-        padding: 15px;
+        height: 70px;
+        padding: 0 15px;
     }
-    body { padding-top: 220px; }
-    .hero-text h1 { font-size: 45px; }
-}
+    
+    body { padding-top: 80px; }
 
+    /* El Footer pasa a 1 columna */
+    .grupo-1 {
+        grid-template-columns: 1fr; 
+        grid-gap: 40px;
+        padding: 30px 15px;
+    }
+
+    .hero-text h1 { 
+        font-size: 35px; /* Tamaño de título más apto para celular */
+    }
+
+    .box figure img {
+        width: 180px; /* Logo más pequeño en footer móvil */
+    }
+
+    .red-social {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
 /* ==========================================================================
    ----------- ESTILOS COMPARTIDOS PARA SUITES (SG, TH, VD) -----------------
    ========================================================================== */

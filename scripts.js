@@ -1,4 +1,31 @@
 //============================================
+//---------------- Navbar --------------------
+//============================================
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navList = document.querySelector(".nav-list");
+  const navLinks = document.querySelectorAll(".nav-list a");
+
+  // 1. Abrir y Cerrar menú al tocar las rayitas
+  if (mobileMenu) {
+    mobileMenu.addEventListener("click", () => {
+      navList.classList.toggle("active");
+      mobileMenu.classList.toggle("is-active");
+    });
+  }
+
+  // 2. Cerrar el menú automáticamente al tocar cualquier link
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (navList.classList.contains("active")) {
+        navList.classList.remove("active");
+        mobileMenu.classList.remove("is-active");
+      }
+    });
+  });
+});
+
+//============================================
 //----------- CARRUSEL INICIO ----------------
 //============================================
 let slideIndex = 1;

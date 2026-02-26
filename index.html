@@ -2,7 +2,8 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Qplus - Más que Calidad</title>
 
     <link rel="stylesheet" href="styles.css" />
@@ -11,7 +12,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="icon" type="image/png" href="media/logoqplus.icon.ico" />
-
     <script defer src="scripts.js"></script>
   </head>
   <body>
@@ -97,35 +97,51 @@
     </main>
     <main class="wrapper-principal">
       <!-- FIRST PAGE SECTION -->
-      <h2>¡Sistema de Gestión basado en mejora continua y eficiencia!</h2>
-      <div class="separator-line"></div>
-      <div class="wrapper-inicio">
-        <div class="container-inicio" id="inicio">
-          <div style="flex: 1; max-width: 50%; padding: 10px">
-            <video width="100%" controls>
-              <source src="media/Qplus 2024- Corto.mp4" type="video/mp4" />
-              Tu navegador no soporta el formato de video.
-            </video>
-          </div>
-          <div class="text-container">
-            <p>
-              QPLUS, sistema orientado a dar apoyo informático a la gestión por
-              procesos, integrando módulos para:
-            </p>
-            <ul class="lista-limpia">
-              <li>
-                Administración, gestión y mantenimiento de los Sistemas de
-                Gestión.
-              </li>
-              <li>
-                Valoración del desempeño basado en análisis de competencias e
-                indicadores.
-              </li>
-              <li>Información de los funcionarios.</li>
-            </ul>
+      <section class="seccion-inicio-proceso">
+        <h2>¡Sistema de Gestión basado en mejora continua y eficiencia!</h2>
+        <div class="separator-line"></div>
+
+        <div class="wrapper-principal">
+          <div class="grid-layout-caracteristicas">
+            <div class="img-content-caracteristicas">
+              <div class="video-container-suite">
+                <video controls>
+                  <source src="media/Qplus 2024- Corto.mp4" type="video/mp4" />
+                  Tu navegador no soporta el formato de video.
+                </video>
+              </div>
+            </div>
+
+            <div class="text-content-caracteristicas">
+              <p class="introduccion-suite">
+                QPLUS es un sistema orientado a dar apoyo informático a la
+                gestión por procesos, integrando módulos especializados para:
+              </p>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <p>
+                  Administración, gestión y mantenimiento integral de los
+                  Sistemas de Gestión.
+                </p>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <p>
+                  Valoración del desempeño basado en análisis de competencias e
+                  indicadores (KPIs).
+                </p>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <p>
+                  Gestión centralizada de la información y ciclo de vida de los
+                  funcionarios.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
       <!-- QPLUS' SUITES SECTION -->
       <section id="modulos" class="seccion-principal">
         <h2>Nuestras Suites</h2>
