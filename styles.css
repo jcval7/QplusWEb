@@ -308,9 +308,9 @@ html {
   position: absolute;
   left: 0;
   top: 0;
-  color: #e67626; /* Color de los check */
+  color: #ff8800; /* Color de los check */
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 /* ============================================================
@@ -462,7 +462,7 @@ h2 {
 }
 
 .feature-item p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: black;
     line-height: 1.2;
     margin: 0;
@@ -513,7 +513,7 @@ h2 {
     position: relative;
     height: 350px; /* Altura fija para el efecto */
     background: #4A6EA6;
-    border: 3px solid #ff8800;
+    border: 3px solid #ff9d2c;
     border-radius: 20px;
     overflow: hidden; /* Corta el texto que está "afuera" */
     cursor: pointer;
@@ -551,8 +551,8 @@ h2 {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #ff8800;
-    color: white;
+    background-color: #ca8333;
+    /* color: white; */
     
     /* AJUSTE: Aumentamos el padding lateral a 40px o 50px */
     padding: 30px 45px; 
