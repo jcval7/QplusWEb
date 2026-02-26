@@ -641,9 +641,10 @@ h2 {
 }
 
 .cuerpo-texto-nosotros p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #444;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #2e2d2d;
     margin-bottom: 20px;
     text-align: justify;
 }
