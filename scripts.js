@@ -4,27 +4,27 @@
 document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = document.getElementById("mobile-menu");
   const navList = document.querySelector(".nav-list");
-  const navLinks = document.querySelectorAll(".nav-list a");
 
-  // 1. Abrir y Cerrar menú al tocar las rayitas
+  // Abrir/Cerrar menú principal
   if (mobileMenu) {
-    mobileMenu.addEventListener("click", () => {
+    mobileMenu.onclick = () => {
       navList.classList.toggle("active");
       mobileMenu.classList.toggle("is-active");
-    });
+    };
   }
 
-  // 2. Cerrar el menú automáticamente al tocar cualquier link
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (navList.classList.contains("active")) {
-        navList.classList.remove("active");
-        mobileMenu.classList.remove("is-active");
+  // Lógica para que Suites despliegue la lista en móvil
+  const dropdowns = document.querySelectorAll(".dropdown");
+  dropdowns.forEach((dd) => {
+    const btn = dd.querySelector(".dropbtn");
+    btn.addEventListener("click", (e) => {
+      if (window.innerWidth <= 992) {
+        e.preventDefault(); // Detiene el salto de página
+        dd.classList.toggle("active-mobile"); // Abre el submenú
       }
     });
   });
 });
-
 //============================================
 //----------- CARRUSEL INICIO ----------------
 //============================================

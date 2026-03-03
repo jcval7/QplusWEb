@@ -2,12 +2,12 @@
    ESTILOS GLOBALES QPLUS
    ========================================================================== */
 body {
-    font-family: 'Century Gothic', sans-serif;
-    font-size: 22px;
-    margin: 0;
-    line-height: 1.5;
-    padding-top: 150px; /* Debe ser igual a la altura del navbar */
-    background-color: whitesmoke;
+  font-family: "Century Gothic", sans-serif;
+  font-size: 22px;
+  margin: 0;
+  line-height: 1.5;
+  padding-top: 150px; /* Debe ser igual a la altura del navbar */
+  background-color: whitesmoke;
 }
 
 .navbar {
@@ -83,7 +83,7 @@ body {
   left: 0;
   background-color: #fff;
   min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   z-index: 10000;
   border-radius: 4px;
 }
@@ -102,204 +102,158 @@ body {
 
 /* --- Estilos para el Menú de Hamburguesa --- */
 .menu-toggle {
-    display: none; /* Oculto en computadoras */
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10001;
+  display: none; /* Oculto en computadoras */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10001;
 }
 
 .bar {
-    width: 30px;
-    height: 4px;
-    background-color: #004a99; /* Azul Qplus */
-    border-radius: 10px;
-    transition: all 0.3s linear;
-    position: relative;
-    transform-origin: 1px;
-}
-
-/* --- AJUSTES PARA CELULARES (Android y Apple) --- */
-@media (max-width: 850px) {
-    .menu-toggle {
-        display: flex; /* Muestra las tres rayitas */
-    }
-
-    .nav-list {
-        display: none; /* Oculta la lista horizontal */
-        flex-direction: column;
-        position: absolute;
-        top: 70px; /* Ajustado a la altura del navbar móvil */
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        padding: 20px 0;
-    }
-
-    .nav-list.active {
-        display: flex; /* Se muestra al tocar las rayitas */
-    }
-
-    .nav-list li {
-        width: 100%;
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    /* Animación de rayitas a X */
-    .menu-toggle.is-active .bar:nth-child(1) { transform: rotate(45deg); }
-    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.is-active .bar:nth-child(3) { transform: rotate(-45deg); }
+  width: 30px;
+  height: 4px;
+  background-color: #004a99; /* Azul Qplus */
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
 }
 
 /* Estilos de la Franja Fina */
 .franja-fina {
-    display: flex !important; /* Fuerza el mostrado */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 6px; /* La subí un poco a 6px para que sea más fácil de detectar ahora */
-    z-index: 999; /* Esto la pone por encima de TODO */
-    overflow: hidden;
+  display: flex !important; /* Fuerza el mostrado */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px; /* La subí un poco a 6px para que sea más fácil de detectar ahora */
+  z-index: 999; /* Esto la pone por encima de TODO */
+  overflow: hidden;
 }
 
 .f-color {
-    flex: 1;
-    height: 100%;
+  flex: 1;
+  height: 100%;
 }
 
 /* Colores de la franja */
-.c1 { background-color: #ff8800; } /* Naranja */
+.c1 {
+  background-color: #ff8800;
+} /* Naranja */
 
 /* ============================================================
 ------------------ SECCION CARRUSEL ---------------------------
 =============================================================== */
 /* --- Contenedor Principal --- */
 .main-fluid {
-    width: 100%;
-    padding: 20px 0; /* Espacio arriba y abajo para que no pegue con el navbar */
+  width: 100%;
+  padding: 20px 0; /* Espacio arriba y abajo para que no pegue con el navbar */
 }
 
 .carousel-container {
-    position: relative;
-    width: 100%; /* NO ocupa de lado a lado */
-    max-width: 1600px; /* Límite para pantallas muy grandes */
-    height: 400px; /* Altura más baja para que se vea más "estirado" */
-    margin: 0 auto; /* Centrado perfecto */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px; /* Opcional: bordes redondeados para más elegancia */
+  position: relative;
+  width: 100%; /* NO ocupa de lado a lado */
+  max-width: 1600px; /* Límite para pantallas muy grandes */
+  height: 400px; /* Altura más baja para que se vea más "estirado" */
+  margin: 0 auto; /* Centrado perfecto */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px; /* Opcional: bordes redondeados para más elegancia */
 }
 
 .slide {
-    display: none;
-    width: 100%;
-    height: 100%;
+  display: none;
+  width: 100%;
+  height: 100%;
 }
 
 .slide img {
-    width: 100%;
-    height: 100%;
-    /* Mantenemos contain para que NO se distorsione ni se corte */
-    object-fit: contain; 
-    object-position: center;
-    display: block;
+  width: 100%;
+  height: 100%;
+  /* Mantenemos contain para que NO se distorsione ni se corte */
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 /* --- Navegación (Flechas fuera de la imagen o en los bordes) --- */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px;
-    color: rgba(0, 74, 153, 0.5);
-    font-size: 35px;
-    text-decoration: none;
-    transition: 0.3s;
-    z-index: 10;
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  color: rgba(0, 74, 153, 0.5);
+  font-size: 35px;
+  text-decoration: none;
+  transition: 0.3s;
+  z-index: 10;
 }
 
-.next { right: 10px; }
-.prev { left: 10px; }
+.next {
+  right: 10px;
+}
+.prev {
+  left: 10px;
+}
 
-.prev:hover, .next:hover {
-    color: #ffcc00; /* Toque amarillo Qplus al pasar el mouse */
+.prev:hover,
+.next:hover {
+  color: #ffcc00; /* Toque amarillo Qplus al pasar el mouse */
 }
 
 /* --- Puntos de control (Dots) --- */
 .dots-container {
-    position: absolute;
-    bottom: 15px;
-    width: 100%;
-    text-align: center;
-    z-index: 15;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 15;
 }
 
 .dot {
-    cursor: pointer;
-    height: 8px;
-    width: 8px;
-    margin: 0 5px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    display: inline-block;
+  cursor: pointer;
+  height: 8px;
+  width: 8px;
+  margin: 0 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .dot.active {
-    background-color: #004a99;
-    transform: scale(1.3);
-}
-
-/* --- ADAPTACIÓN PARA MÓVIL --- */
-@media (max-width: 768px) {
-    .carousel-container {
-        width: 95%; /* En móvil aprovechamos más el ancho */
-        height: 200px; /* Proporción para celulares */
-    }
+  background-color: #004a99;
+  transform: scale(1.3);
 }
 
 /* ============================================================
 ---------------- SECCION INICIO -------------------------------
 =============================================================== */
 .seccion-inicio-proceso {
-    padding: 60px 0;
+  padding: 60px 0;
 }
 
 .seccion-inicio-proceso h2 {
-    text-align: center;
-    font-size: 40px;
-    color: #004a99;
-    margin-bottom: 10px;
-    padding: 0 20px;
+  text-align: center;
+  font-size: 40px;
+  color: #004a99;
+  margin-bottom: 10px;
+  padding: 0 20px;
 }
 
 .separator-line {
-    width: 60px;
-    height: 4px;
-    background-color: #DBB557;
-    margin: 0 auto 40px auto;
-}
-
-/* Ajuste específico para el orden en el inicio en móvil */
-@media (max-width: 850px) {
-    .seccion-inicio-proceso .grid-layout-caracteristicas {
-        display: flex;
-        flex-direction: column; /* Video arriba, texto abajo */
-    }
-    
-    .seccion-inicio-proceso h2 {
-        font-size: 24px;
-    }
+  width: 60px;
+  height: 4px;
+  background-color: #dbb557;
+  margin: 0 auto 40px auto;
 }
 
 /* ============================================================
@@ -307,184 +261,115 @@ body {
 =============================================================== */
 /* --- CONTENEDOR DE CONTENIDO SUITES --- */
 .wrapper-principal {
-    width: 100%;            /* Ocupa el 100% del ancho de la pantalla */
-    max-width: 1400px;     /* Permite que se ensanche hasta 1400px */
-    margin: 0 auto;        /* Mantiene el contenido centrado */
-    padding: 0 20px;       /* Espacio interno para que no toque los bordes en tablets */
+  width: 100%; /* Ocupa el 100% del ancho de la pantalla */
+  max-width: 1400px; /* Permite que se ensanche hasta 1400px */
+  margin: 0 auto; /* Mantiene el contenido centrado */
+  padding: 0 20px; /* Espacio interno para que no toque los bordes en tablets */
 }
 
 h2 {
-    text-align: center;
-    font-size: 40px;
-    color: #004a99;
-    margin-bottom: 10px;
+  text-align: center;
+  font-size: 40px;
+  color: #004a99;
+  margin-bottom: 10px;
 }
 
 .separator-line {
-    border: 0;
-    height: 2px;
-    background: #ffcc00;
-    width: 100px;
-    margin: 0 auto 40px auto;
+  border: 0;
+  height: 2px;
+  background: #ffcc00;
+  width: 100px;
+  margin: 0 auto 40px auto;
 }
 
 /* --- TARJETAS DE SUITES (CARDS) --- */
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .card {
-    background: #4A6EA6;
-    padding: 40px;
-    border-radius: 15px;
-    text-align: center;
-    border: 3px solid #ff8800;
-    transition: all 0.3s ease;
-    cursor: pointer;
+  background: #4a6ea6;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  border: 3px solid #ff8800;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    border-color: #ffcc00;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transform: translateY(-10px);
+  border-color: #ffcc00;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
-    font-size: 50px;
-    color: white;
-    margin-bottom: 20px;
-    filter: brightness(0) invert(1);
+  font-size: 50px;
+  color: white;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
 }
 
 .card h3 {
-    margin-bottom: 15px;
-    color: white;
+  margin-bottom: 15px;
+  color: white;
 }
 
 .card p {
-    color: white;
-    font-size: 1.3rem;
+  color: white;
+  font-size: 1.3rem;
 }
 
-/* --- ADAPTACIÓN PARA MÓVIL (TABLETS Y CELULARES) --- */
-
-@media (max-width: 992px) {
-    .card-container {
-        /* En tablets pasamos a 2 columnas si hay espacio, o se ajusta solo */
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    
-    h2 {
-        font-size: 32px;
-    }
-}
-
-@media (max-width: 768px) {
-    .wrapper-principal {
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-
-    h2 {
-        font-size: 28px;
-    }
-
-    .card-container {
-        /* En celulares una sola tarjeta por fila */
-        grid-template-columns: 1fr;
-    }
-
-    .card {
-        padding: 25px; /* Reducimos el padding para ganar espacio */
-    }
-
-    .card p {
-        font-size: 1.1rem; /* Texto un poco más pequeño para legibilidad */
-    }
-
-    .card img {
-        height: 60px; /* Ajustamos el tamaño del icono/imagen */
-        margin-bottom: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .card h3 {
-        font-size: 1.5rem;
-    }
-    
-    .card p {
-        font-size: 1rem;
-    }
-}
 /* ============================================================
 ------------------ SECCION POR QUÉ QPLUS? ---------------------
 =============================================================== */
 /* --- Sección Características --- */
 .bg-light {
-    padding: 60px 0;
+  padding: 60px 0;
 }
 
 .grid-layout-caracteristicas {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;             /* Aumentamos un poco el espacio entre columnas */
-    align-items: center;
-    margin: 50px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px; /* Aumentamos un poco el espacio entre columnas */
+  align-items: center;
+  margin: 50px 0;
 }
 
 /* Estilo de cada ítem de característica */
 .feature-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
 }
 
 .feature-item i {
-    color: #4A6EA6; /* Azul Corporativo */
-    font-size: 24px;
-    margin-right: 15px;
-    margin-top: 5px;
+  color: #4a6ea6; /* Azul Corporativo */
+  font-size: 24px;
+  margin-right: 15px;
+  margin-top: 5px;
 }
 
 .feature-item p {
-    font-size: 1.3rem;
-    color: black;
-    line-height: 1.2;
-    margin: 0;
+  font-size: 1.3rem;
+  color: black;
+  line-height: 1.2;
+  margin: 0;
 }
 
 /* Contenedor de Imagen */
 .img-content-caracteristicas {
-    text-align: center;
+  text-align: center;
 }
 
 .img-fluida {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    /* Sombra suave para que resalte del fondo blanco */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-/* Responsivo para móviles */
-@media (max-width: 992px) {
-    .grid-layout-caracteristicas {
-        grid-template-columns: 1fr; /* Una sola columna en celulares */
-        text-align: center;
-    }
-    
-    .feature-item {
-        justify-content: center;
-    }
-    
-    .img-content-caracteristicas {
-        order: -1; /* La imagen aparece arriba en móviles */
-        margin-bottom: 30px;
-    }
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  /* Sombra suave para que resalte del fondo blanco */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* ============================================================
@@ -492,105 +377,97 @@ h2 {
 =============================================================== */
 /* --- Contenedor de Instalación --- */
 .grid-layout-instalacion {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
 }
 
 .card-instalacion {
-    position: relative;
-    height: 350px; /* Altura fija para el efecto */
-    background: #4A6EA6;
-    border: 3px solid #ff9d2c;
-    border-radius: 20px;
-    overflow: hidden; /* Corta el texto que está "afuera" */
-    cursor: pointer;
-    transition: all 0.4s ease;
+  position: relative;
+  height: 350px; /* Altura fija para el efecto */
+  background: #4a6ea6;
+  border: 3px solid #ff9d2c;
+  border-radius: 20px;
+  overflow: hidden; /* Corta el texto que está "afuera" */
+  cursor: pointer;
+  transition: all 0.4s ease;
 }
 
 /* --- Capa Superior (Logo y Título) --- */
 .card-front-ins {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    transition: all 0.4s ease;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: all 0.4s ease;
+  padding: 20px;
 }
 
 .card-front-ins img {
-    height: 150px;
-    margin-bottom: 15px;
-    transition: transform 0.4s ease;
-    filter: brightness(0) invert(1);
-    
+  height: 150px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+  filter: brightness(0) invert(1);
 }
 
 .card-front-ins h3 {
-    color: #ffffff;
-    font-size: 1.8rem;
-    font-weight: 800;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 800;
 }
 
 /* --- Capa Inferior (Texto Oculto) --- */
 .card-back-ins {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #ca8333;
-    /* color: white; */
-    
-    /* AJUSTE: Aumentamos el padding lateral a 40px o 50px */
-    padding: 30px 45px; 
-    
-    transform: translateY(100%);
-    transition: transform 0.5s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box; /* Asegura que el padding no agrande la tarjeta */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ca8333;
+  /* color: white; */
+
+  /* AJUSTE: Aumentamos el padding lateral a 40px o 50px */
+  padding: 30px 45px;
+
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box; /* Asegura que el padding no agrande la tarjeta */
 }
 
 .card-back-ins p {
-    color: white;
-    font-size: 1.1rem;
-    line-height: 1.6; /* Un poco más de espacio entre líneas ayuda a la lectura */
-    margin-bottom: 15px;
-    text-align: left; /* Alineado a la izquierda se lee más natural que justificado en espacios pequeños */
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6; /* Un poco más de espacio entre líneas ayuda a la lectura */
+  margin-bottom: 15px;
+  text-align: left; /* Alineado a la izquierda se lee más natural que justificado en espacios pequeños */
 }
 
 /* --- EFECTO HOVER (Expansión) --- */
 .card-instalacion:hover .card-back-ins {
-    transform: translateY(0); /* Sube el texto */
+  transform: translateY(0); /* Sube el texto */
 }
 
 .card-instalacion:hover .card-front-ins {
-    opacity: 0;
-    transform: scale(0.8); /* El logo se desvanece sutilmente */
+  opacity: 0;
+  transform: scale(0.8); /* El logo se desvanece sutilmente */
 }
 
 .card-instalacion:hover {
-    border-color: #ffffff; /* Cambio de borde a amarillo */
-    box-shadow: 0 15px 30px rgba(238, 162, 112, 0.2);
+  border-color: #ffffff; /* Cambio de borde a amarillo */
+  box-shadow: 0 15px 30px rgba(238, 162, 112, 0.2);
 }
 
 /* Estilo para la info destacada dentro de la card azul */
 .card-back-ins .info-destacada {
-    background: rgba(255, 255, 255, 0.1);
-    border-left: 3px solid #ffcc00;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-/* Responsivo */
-@media (max-width: 850px) {
-    .grid-layout-instalacion {
-        grid-template-columns: 1fr; /* Una columna en móviles */
-    }
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid #ffcc00;
+  padding: 10px;
+  margin: 10px 0;
 }
 
 /* ============================================================
@@ -598,71 +475,49 @@ h2 {
 =============================================================== */
 /* --- Sección Nosotros --- */
 .bg-white {
-    padding: 60px 0;
+  padding: 60px 0;
 }
 
 .grid-layout-nosotros {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-    gap: 50px;
-    align-items: center; /* Centra verticalmente el contenido */
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  gap: 50px;
+  align-items: center; /* Centra verticalmente el contenido */
+  margin-top: 20px;
 }
 
 /* Imagen de la izquierda */
 .img-content-nosotros {
-    text-align: center;
+  text-align: center;
 }
 
 .img-content-nosotros img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    /* Mismo estilo de sombra que Características */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  /* Mismo estilo de sombra que Características */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Contenido de texto y logo D&M */
 .logo-nosotros {
-    margin-bottom: 25px;
-    text-align: center;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .logo-dym {
-    height: 80px; /* Tamaño controlado para el logo de la empresa */
-    width: auto;
-    display: inline-block;
+  height: 80px; /* Tamaño controlado para el logo de la empresa */
+  width: auto;
+  display: inline-block;
 }
 
 .cuerpo-texto-nosotros p {
-    font-family: 'Century Gothic', sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    color: #2e2d2d;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-/* --- ADAPTACIÓN PARA MÓVIL --- */
-@media (max-width: 992px) {
-    .grid-layout-nosotros {
-        grid-template-columns: 1fr; /* Una columna en tablets y móviles */
-        text-align: center;
-    }
-
-    .logo-nosotros {
-        text-align: center;
-    }
-
-    .img-content-nosotros {
-        order: -1; /* Imagen arriba en móviles */
-        margin-bottom: 30px;
-    }
-
-    .cuerpo-texto-nosotros p {
-        text-align: left; /* Mejor lectura en celular */
-        font-size: 1rem;
-    }
+  font-family: "Century Gothic", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #2e2d2d;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
 /* ============================================================
@@ -670,127 +525,128 @@ h2 {
 =============================================================== */
 /* --- Carrusel Clientes --- */
 .carousel-marquee {
-    overflow: hidden;
-    padding: 50px 0;
-    white-space: nowrap;
-    width: 100%;
-    position: relative;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+  overflow: hidden;
+  padding: 50px 0;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .marquee-content {
-    display: inline-block;
-    white-space: nowrap;
-    animation: marquee 25s linear infinite; /* 25s es una velocidad cómoda */
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite; /* 25s es una velocidad cómoda */
 }
 
 .logo-item {
-    display: inline-block;
-    /* CLAVE: Dimensiones fijas para el contenedor del logo */
-    width: 180px; 
-    height: 100px;
-    margin: 0 40px;
-    vertical-align: middle;
+  display: inline-block;
+  /* CLAVE: Dimensiones fijas para el contenedor del logo */
+  width: 180px;
+  height: 100px;
+  margin: 0 40px;
+  vertical-align: middle;
 }
 
 .logo-item img {
-    width: 100%;
-    height: 100%;
-    /* CLAVE: 'contain' evita que se estiren y los centra en el marco */
-    object-fit: contain; 
-    transition: all 0.4s ease;
+  width: 100%;
+  height: 100%;
+  /* CLAVE: 'contain' evita que se estiren y los centra en el marco */
+  object-fit: contain;
+  transition: all 0.4s ease;
 }
 
 .logo-item:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
-    transform: scale(1.1); /* Efecto de acercamiento suave */
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1); /* Efecto de acercamiento suave */
 }
 
 /* Animación fluida */
 @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); } /* Se desplaza la mitad exacta */
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  } /* Se desplaza la mitad exacta */
 }
 
 /* --- Casos de Éxito --- */
-.espacio-arriba { margin-top: 80px; }
+.espacio-arriba {
+  margin-top: 80px;
+}
 
 .grid-casos-exito {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .card-exito {
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,74,153,0.1);
-    border: 1px solid #eee;
-    display: flex;
-    flex-direction: column;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 74, 153, 0.1);
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
 }
 
 .header-blanco {
-    padding: 30px;
-    text-align: center;
-    background: #fff;
+  padding: 30px;
+  text-align: center;
+  background: #fff;
 }
 
 .header-blanco img {
-    height: 60px;
-    margin-bottom: 20px;
+  height: 60px;
+  margin-bottom: 20px;
 }
 
 .header-blanco h3 {
-    font-size: 1.2rem;
-    color: #004a99;
-    margin: 0;
+  font-size: 1.2rem;
+  color: #004a99;
+  margin: 0;
 }
 
 .cargo {
-    color: #ff8800; /* Naranja para resaltar el cargo */
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin: 5px 0;
+  color: #ff8800; /* Naranja para resaltar el cargo */
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 5px 0;
 }
 
 .ubicacion {
-    font-size: 0.85rem;
-    color: #777;
+  font-size: 0.85rem;
+  color: #777;
 }
 
 .cuerpo-azul {
-    background: #004a99; /* Azul corporativo */
-    color: #fff;
-    padding: 30px;
-    flex-grow: 1;
-    position: relative;
+  background: #004a99; /* Azul corporativo */
+  color: #fff;
+  padding: 30px;
+  flex-grow: 1;
+  position: relative;
 }
 
 .cuerpo-azul::before {
-    content: '"';
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    font-size: 4rem;
-    color: rgba(255,255,255,0.1);
-    font-family: serif;
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.1);
+  font-family: serif;
 }
 
 .cuerpo-azul p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-    font-style: italic;
-}
-
-/* Adaptación Móvil */
-@media (max-width: 992px) {
-    .grid-casos-exito { grid-template-columns: 1fr; }
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
 }
 
 /* ============================================================
@@ -798,475 +654,570 @@ h2 {
 =============================================================== */
 /* --- Sección Contacto Estilo Qplus --- */
 .bg-light {
-    padding: 80px 0;
+  padding: 80px 0;
 }
 
 .subtitle {
-    margin-bottom: 40px;
-    color: #666;
-    text-align: center;
+  margin-bottom: 40px;
+  color: #666;
+  text-align: center;
 }
 
 .grid-layout-contacto {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr; /* Formulario ligeramente más ancho */
-    gap: 60px;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* Formulario ligeramente más ancho */
+  gap: 60px;
+  align-items: start;
 }
 
 /* Formulario */
 .form-container {
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 74, 153, 0.05);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 74, 153, 0.05);
 }
 
-.form-container h3, .info-contacto h3 {
-    color: #4A6EA6;
-    margin-bottom: 25px;
-    font-size: 24px;
+.form-container h3,
+.info-contacto h3 {
+  color: #4a6ea6;
+  margin-bottom: 25px;
+  font-size: 24px;
 }
 
 .input-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .input-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #4A6EA6;
-    font-weight: bold;
-    font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+  color: #4a6ea6;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.input-group input, 
+.input-group input,
 .input-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #eee;
-    border-radius: 8px;
-    font-family: 'Century Gothic', sans-serif;
-    font-size: 16px;
-    transition: 0.3s ease;
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-family: "Century Gothic", sans-serif;
+  font-size: 16px;
+  transition: 0.3s ease;
 }
 
-.input-group input:focus, 
+.input-group input:focus,
 .input-group textarea:focus {
-    border-color: #004a99;
-    outline: none;
+  border-color: #004a99;
+  outline: none;
 }
 
 .btn-enviar {
-    background-color: rgb(31, 167, 31); /* Verde claro */
-    color: white;
-    border: none;
-    padding: 15px 35px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 18px;
-    cursor: pointer;
-    width: 100%;
-    transition: 0.3s;
+  background-color: rgb(31, 167, 31); /* Verde claro */
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
 }
 
 .btn-enviar:hover {
-    background-color: #4A6EA6;
-    color: white;
+  background-color: #4a6ea6;
+  color: white;
 }
 
 /* Información Lateral */
 .descripcion-contacto {
-    line-height: 1.6;
-    margin-bottom: 30px;
+  line-height: 1.6;
+  margin-bottom: 30px;
 }
 
 .datos-lista {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .dato-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .dato-item i {
-    font-size: 20px;
-    margin-right: 15px;
-    color: #ff8800; /* Naranja para los iconos */
-    width: 25px;
-    text-align: center;
+  font-size: 20px;
+  margin-right: 15px;
+  color: #ff8800; /* Naranja para los iconos */
+  width: 25px;
+  text-align: center;
 }
 
-.dato-item a, .dato-item span {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+.dato-item a,
+.dato-item span {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
 }
 
 .image-container-contacto img {
-    width: 80%;
-    border-radius: 15px;
-    display: block;
-    margin: 0 auto;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
-}
-
-/* --- ADAPTACIÓN MÓVIL --- */
-@media (max-width: 992px) {
-    .grid-layout-contacto {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
-    .info-contacto {
-        order: -1; /* Info arriba en móviles */
-        text-align: center;
-    }
-
-    .dato-item {
-        justify-content: center;
-    }
+  width: 80%;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
 }
 
 /* ============================================================
 ------------------ SECCION FOOTER COMPLETO --------------------
 =============================================================== */
 .pie-pagina {
-    width: 100%;
-    background-color: #346ba6; /* El azul de tu código */
+  width: 100%;
+  background-color: #346ba6; /* El azul de tu código */
 }
 
 .grupo-1 {
-    width: 100%;
-    max-width: 1400px; /* Ajustado para que no sea excesivamente ancho en pantallas 4k */
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas en PC */
-    grid-gap: 50px; /* Espaciado equilibrado */
-    padding: 45px 20px;
-    text-align: center;
+  width: 100%;
+  max-width: 1400px; /* Ajustado para que no sea excesivamente ancho en pantallas 4k */
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas en PC */
+  grid-gap: 50px; /* Espaciado equilibrado */
+  padding: 45px 20px;
+  text-align: center;
 }
 
 .box figure {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 figure img {
-    width: 250px;
-    max-width: 100%; /* Evita que la imagen se salga en móviles */
-    height: auto;
+  width: 250px;
+  max-width: 100%; /* Evita que la imagen se salga en móviles */
+  height: auto;
 }
 
 .box h3 {
-    text-align: center;
-    color: white;
-    margin-bottom: 25px;
-    font-size: 20px;
+  text-align: center;
+  color: white;
+  margin-bottom: 25px;
+  font-size: 20px;
 }
 
 .box p {
-    color: white;
-    margin-bottom: 10px;
-    font-size: 18px;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
 .box p a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .box p a:hover {
-    color: #e67626; /* Color naranja de tu código */
+  color: #e67626; /* Color naranja de tu código */
 }
 
 /* Redes Sociales */
 .red-social a {
-    display: inline-block;
-    text-decoration: none;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    color: white;
-    margin: 5px; /* Espacio para que no se peguen en móvil */
-    background-color: #003366;
-    text-align: center;
-    transition: all 300ms ease;
-    border-radius: 10px;
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: white;
+  margin: 5px; /* Espacio para que no se peguen en móvil */
+  background-color: #003366;
+  text-align: center;
+  transition: all 300ms ease;
+  border-radius: 10px;
 }
 
 .red-social a:hover {
-    color: #e67626;
-    background-color: white;
+  color: #e67626;
+  background-color: white;
 }
 
 /* Franja Inferior Copyright */
 .grupo-2 {
-    background-color: #e67626;
-    padding: 15px 10px;
-    text-align: center;
-    color: white;
+  background-color: #e67626;
+  padding: 15px 10px;
+  text-align: center;
+  color: white;
 }
 
 .grupo-2 small {
-    font-size: 15px;
+  font-size: 15px;
 }
 
-/* ==========================================================================
-   AJUSTES PARA MÓVIL (Android & iOS)
-   ========================================================================== */
-@media (max-width: 850px) {
-    /* Navbar ajustado para que no tape el contenido */
-    .navbar {
-        height: 70px;
-        padding: 0 15px;
-    }
-    
-    body { padding-top: 80px; }
-
-    /* El Footer pasa a 1 columna */
-    .grupo-1 {
-        grid-template-columns: 1fr; 
-        grid-gap: 40px;
-        padding: 30px 15px;
-    }
-
-    .hero-text h1 { 
-        font-size: 35px; /* Tamaño de título más apto para celular */
-    }
-
-    .box figure img {
-        width: 180px; /* Logo más pequeño en footer móvil */
-    }
-
-    .red-social {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-}
 /* ==========================================================================
    ----------- ESTILOS COMPARTIDOS PARA SUITES (SG, TH, VD) -----------------
    ========================================================================== */
 
 .hero-overlay {
-    background: rgba(1, 23, 46, 0.6); 
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    padding: 0 10%;
+  background: rgba(1, 23, 46, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
 }
 
 .hero-text h1 {
-    color: #DBB557; 
-    font-size: 60px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+  color: #dbb557;
+  font-size: 60px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .hero-text p {
-    color: white;
-    font-size: 25px;
-    max-width: 600px;
-    line-height: 1.4;
+  color: white;
+  font-size: 25px;
+  max-width: 600px;
+  line-height: 1.4;
 }
 
 .hero-logo-derecha {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-logo-derecha img {
-    max-height: 180px;
-    width: auto;
-    filter: brightness(0) invert(1) drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+  max-height: 180px;
+  width: auto;
+  filter: brightness(0) invert(1) drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
 }
 
 /* ==========================================================================
    DIFERENCIACIÓN DE BANNERS
    ========================================================================== */
 .hero-bg-modulo-sg {
-    width: 100%;
-    height: 320px;
-    background-image: url('media/Banners\ Suites\ Qplus\ -\ Info/bannersuite_SG.png');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  height: 320px;
+  background-image: url("media/Banners\ Suites\ Qplus\ -\ Info/bannersuite_SG.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .hero-bg-modulo-th {
-    width: 100%;
-    height: 320px;
-    background-image: url('media/Banners\ Suites\ Qplus\ -\ Info/bannersuite_TH.png');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  height: 320px;
+  background-image: url("media/Banners\ Suites\ Qplus\ -\ Info/bannersuite_TH.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .hero-bg-modulo-vd {
-    width: 100%;
-    height: 320px;
-    background-image: url('media/Banners\ Suites\ Qplus\ -\ Info/bannersuite_VD.png');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  height: 320px;
+  background-image: url("media/Banners\ Suites\ Qplus\ -\ Info/bannersuite_VD.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 /* ==========================================================================
    ESTRUCTURA DE CONTENIDO (TABLES & GRID)
    ========================================================================== */
-   /* 3. Contenido Introductorio */
+/* 3. Contenido Introductorio */
 .introduccion-suite {
-    font-size: 25px;
-    line-height: 1.6;
-    color: #444;
-    margin: 30px 0 40px 0;
-    text-align: justify;
-    font-family: 'Century Gothic', sans-serif;
+  font-size: 25px;
+  line-height: 1.6;
+  color: #444;
+  margin: 30px 0 40px 0;
+  text-align: justify;
+  font-family: "Century Gothic", sans-serif;
 }
 
 /* 4. Grid Principal (2 Columnas) */
 .grid-layout-caracteristicas {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-    margin: 50px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin: 50px 0;
 }
 
 /* --- Elementos Visuales del Grid (Imagen vs Video) --- */
 
 /* Estilo para las IMÁGENES (TH y VD) */
 .img-fluida {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-    border: 4px solid #fff;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  border: 4px solid #fff;
 }
 
 /* Estilo para el VIDEO (SG) */
 .video-container-suite {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-    border: 4px solid #fff;
-    background: #000; /* Fondo negro solo para el video */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  border: 4px solid #fff;
+  background: #000; /* Fondo negro solo para el video */
 }
 
 .video-container-suite video {
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: block;
 }
 
 /* 5. Tabla de Módulos (Diseño Limpio) */
 .tabla-contenedor {
-    margin-top: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #fff;
+  margin-top: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .row-with-border {
-    border-bottom: 1px solid #eee;
-    transition: background 0.2s ease;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s ease;
 }
 
 .row-with-border:hover {
-    background-color: #f9fbff;
+  background-color: #f9fbff;
 }
 
 .image-label-container {
-    width: 200px;
-    padding: 25px;
-    text-align: center;
-    vertical-align: middle;
-    background-color: #f4f7fa;
+  width: 200px;
+  padding: 25px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #f4f7fa;
 }
 
 .image-label-container img {
-    max-width: 80px;
-    height: auto;
-    margin-bottom: 8px;
+  max-width: 80px;
+  height: auto;
+  margin-bottom: 8px;
 }
 
 .image-label {
-    font-weight: bold;
-    color: #004a99;
-    font-size: 16px;
-    margin: 0;
+  font-weight: bold;
+  color: #004a99;
+  font-size: 16px;
+  margin: 0;
 }
 
 .row-with-border td:last-child {
-    padding: 25px 35px;
-    vertical-align: top;
+  padding: 25px 35px;
+  vertical-align: top;
 }
 
 .row-with-border td p {
-    margin: 6px 0;
-    font-size: 20px;
-    line-height: 1.5;
-    color: #444;
+  margin: 6px 0;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #444;
 }
 
 /* ==========================================================================
-   ADAPTACIÓN PARA MÓVIL (RESPONSIVE)
+   CONFIGURACIÓN RESPONSIVA MAESTRA QPLUS (CELULARES Y TABLETS)
    ========================================================================== */
-@media (max-width: 850px) {
-    .hero-text h1 { font-size: 35px; }
-    .hero-text p { font-size: 18px; }
+@media (max-width: 992px) {
+  /* 1. BASE Y NAVEGACIÓN (Tu base sólida) */
+  body {
+    padding-top: 80px;
+    font-size: 16px;
+    overflow-x: hidden;
+    width: 100%;
+  }
 
-    .hero-overlay {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        padding: 20px;
-    }
+  .navbar {
+    height: 80px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+  }
 
-    .hero-logo-derecha { margin-top: 20px; }
-    .hero-logo-derecha img { max-height: 100px; }
+  .logo img { height: 50px !important; width: auto; margin-bottom: 0; }
+  .menu-toggle { display: flex !important; flex-direction: column; gap: 4px; cursor: pointer; z-index: 10002; }
+  .bar { width: 25px; height: 3px; background-color: #004a99; border-radius: 2px; }
 
-    .introduccion-suite {
-        font-size: 18px;
-        text-align: left;
-        padding: 0 15px;
-    }
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 10001;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  .nav-list.active { display: flex; }
+  .nav-list a { padding: 15px; display: block; border-bottom: 1px solid #eee; text-align: center; }
 
-    .grid-layout-caracteristicas {
-        grid-template-columns: 1fr;
-        padding: 0 15px;
-    }
+  .dropdown-content { position: static; display: none; width: 100%; background-color: #f9f9f9; box-shadow: none; }
+  .dropdown.active-mobile .dropdown-content { display: block !important; }
 
-    .image-label-container {
-        width: 120px;
-        padding: 15px;
-    }
+  /* 2. BANNERS / HEROES (Ajuste de dimensiones) */
+  [class*="hero-bg-modulo-"] {
+    height: auto !important;
+    min-height: 250px !important;
+    padding: 40px 20px !important;
+    display: flex;
+    align-items: center;
+  }
 
-    .image-label-container img {
-        max-width: 60px;
-    }
-    
-    .img-content-caracteristicas {
-        text-align: center;
-    }
+  .hero-overlay {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* 3. MÓDULOS DE SUITES (ESTILO GLOPEM) - Solo afecta a las tablas */
+  .tabla-contenedor table, 
+  .tabla-contenedor tbody, 
+  .tabla-contenedor tr, 
+  .tabla-contenedor td {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .row-with-border {
+    border-bottom: 2px solid #eee;
+    padding: 30px 15px !important;
+    background-color: white;
+    display: flex !important;
+    flex-direction: column !important; /* Logo arriba, texto abajo */
+    align-items: center !important;
+    box-sizing: border-box;
+  }
+
+  .image-label-container {
+    background-color: transparent !important;
+    padding: 0 0 15px 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-label-container img {
+    max-width: 80px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .image-label { font-size: 1.25rem !important; text-align: center; color: #004a99; font-weight: bold; }
+
+  .row-with-border td p {
+    text-align: center !important;
+    font-size: 1rem !important;
+    line-height: 1.5;
+    margin: 5px 0 !important;
+  }
+
+  /* 4. CARDS DE INDEX E INSTALACIÓN (Recuperamos tu centrado perfecto) */
+  .card, .product-card, .card-exito, .card-instalacion {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: unset !important;
+    margin: 0 auto 20px auto !important;
+    min-height: 380px !important; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 25px !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card p, .card-exito p, .card-back-ins p, .product-card p {
+    font-size: 0.95rem !important;
+    line-height: 1.5;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .card-back-ins {
+    padding: 20px 25px !important;
+    height: 100%;
+    width: 100%;
+    background-color: #ca8333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+  }
+
+  .card-instalacion:hover .card-back-ins, 
+  .card-instalacion:active .card-back-ins { transform: translateY(0); }
+
+  /* 5. CENTRADO DE SECCIONES Y GRILLAS (Tu configuración favorita) */
+  .wrapper-principal, .modules-wrapper, .products-container {
+    width: 100% !important;
+    padding: 0 20px !important;
+    box-sizing: border-box;
+  }
+
+  .grid-layout-caracteristicas, .grid-layout-nosotros, .grid-layout-contacto, 
+  .grid-layout-instalacion, .grid-casos-exito, .card-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 35px;
+    width: 100% !important;
+  }
+
+  .img-content-caracteristicas, .img-content-nosotros, 
+  .image-container-contacto, .video-container-suite {
+    order: -1;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .img-fluida, .img-content-nosotros img { max-width: 100%; height: auto; }
+
+  /* 6. FOOTER (Estilo Centrado) */
+  .grupo-1 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 40px !important;
+    padding: 50px 20px !important;
+  }
+
+  .box figure img { width: 180px !important; }
+  .box h3 { font-size: 22px !important; margin-bottom: 20px !important; border-bottom: 2px solid #e67626; display: inline-block; padding-bottom: 5px; }
+  .red-social { display: flex; justify-content: center; gap: 15px; }
+  .red-social a { width: 50px !important; height: 50px !important; line-height: 50px !important; font-size: 22px !important; }
 }
